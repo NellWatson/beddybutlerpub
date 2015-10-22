@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9058"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Beddy Butler" id="6r8-jR-IQU">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Beddy Butler" systemMenu="apple" id="lfj-tC-u7F">
+                                    <items>
+                                        <menuItem title="Not Now Old Chap" toolTip="Enable quiet mode for the rest of the night" id="uZv-iI-bVS" userLabel="Mute">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="lQB-tK-Eio" name="value" keyPath="values.isMuted" id="K2P-hP-89g"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="DcW-2q-hc9"/>
+                                        <menuItem title="About Beddy Butler" id="LsZ-vP-hFP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="C1n-eF-rec"/>
+                                                <segue destination="vVG-17-Gue" kind="modal" id="wrJ-vh-np4"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="fdg-7d-XMJ"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="5JI-LV-irr">
+                                            <connections>
+                                                <segue destination="XfG-lQ-9wD" kind="modal" id="OUG-1s-vbT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="YIf-r7-Yq2"/>
+                                        <menuItem title="Help" id="qkF-Xv-hBV">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Help" systemMenu="help" id="FxK-a3-n3J"/>
+                                        </menuItem>
+                                        <menuItem title="Beddy Butler Help" keyEquivalent="?" id="cq8-UM-pNh">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="cLq-al-ye8"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="stD-ui-4Ai"/>
+                                        <menuItem title="Quit Beddy Butler" keyEquivalent="q" id="hkF-8S-LEb">
+                                            <connections>
+                                                <action selector="quit:" target="Voe-Tx-rLC" id="0e8-5c-PLb"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Beddy_Butler" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="lfj-tC-u7F" id="Ac5-IG-Cle"/>
+                    </connections>
+                </customObject>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="lQB-tK-Eio"/>
+            </objects>
+            <point key="canvasLocation" x="27" y="-99"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="cTy-rG-yJD">
+            <objects>
+                <viewController title="About" showSeguePresentationStyle="single" id="vVG-17-Gue" customClass="AboutViewController" customModule="Beddy_Butler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="0za-ef-iMg">
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="178"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="230-hj-ROE">
+                                <rect key="frame" x="20" y="25" width="128" height="128"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSApplicationIcon" id="22b-bO-gJM"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQz-PZ-Xg6">
+                                <rect key="frame" x="174" y="129" width="160" height="24"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Beddy Butler" id="MlE-eQ-fZQ">
+                                    <font key="font" size="20" name="HelveticaNeue-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEv-iq-Lre">
+                                <rect key="frame" x="174" y="104" width="229" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version 1.0" id="VKR-t0-XUq">
+                                    <font key="font" metaFont="user"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-JY-gCE">
+                                <rect key="frame" x="174" y="70" width="262" height="26"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copyright (c) 2015, Nell Watson Inc." id="fbE-MI-sFy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7af-6i-GQq">
+                                <rect key="frame" x="289" y="18" width="157" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="License Agreement" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2mV-Zk-lfo">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="4iy-qM-fVN" kind="sheet" id="gYI-yu-Prc"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6C-9P-qVe">
+                                <rect key="frame" x="174" y="49" width="262" height="26"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="All rights reserved." id="HSH-92-ifH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="versionTextField" destination="ZEv-iq-Lre" id="saO-vC-miZ"/>
+                    </connections>
+                </viewController>
+                <customObject id="wuL-hq-gSW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="346"/>
+        </scene>
+        <!--License View Controller-->
+        <scene sceneID="EO6-Gb-LVm">
+            <objects>
+                <viewController title="License Agreement" id="4iy-qM-fVN" userLabel="License View Controller" sceneMemberID="viewController">
+                    <view key="view" id="ft9-vC-Mfy">
+                        <rect key="frame" x="0.0" y="0.0" width="593" height="381"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4S-wQ-pp4">
+                                <rect key="frame" x="20" y="52" width="553" height="309"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="fLW-RS-vH5">
+                                    <rect key="frame" x="1" y="1" width="551" height="307"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" baseWritingDirection="leftToRight" selectionGranularity="word" findStyle="panel" verticallyResizable="YES" quoteSubstitution="YES" dashSubstitution="YES" id="2fU-H6-Xsl">
+                                            <rect key="frame" x="0.0" y="0.0" width="551" height="475"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <animations/>
+                                            <color key="textColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="551" height="307"/>
+                                            <size key="maxSize" width="553" height="800"/>
+                                            <attributedString key="textStorage">
+                                                <fragment>
+                                                    <mutableString key="content">Beddy Butler Copyright (c) 2015, Nell Watson Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</mutableString>
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" metaFont="message"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                            <tabStops/>
+                                                        </paragraphStyle>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="551" height="307"/>
+                                            <size key="maxSize" width="553" height="800"/>
+                                        </textView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <animations/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="kbo-cI-OMg">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="zDJ-DX-6vU">
+                                    <rect key="frame" x="536" y="1" width="16" height="307"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-yL-sGl">
+                                <rect key="frame" x="504" y="13" width="75" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0y6-i4-2G7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="XFa-6x-myT" id="Sw2-B1-SG7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="P4S-wQ-pp4" firstAttribute="trailing" secondItem="sC7-yL-sGl" secondAttribute="trailing" id="0zS-MY-Y44"/>
+                            <constraint firstItem="P4S-wQ-pp4" firstAttribute="top" secondItem="ft9-vC-Mfy" secondAttribute="top" constant="20" symbolic="YES" id="Fyd-W1-RFf"/>
+                            <constraint firstItem="P4S-wQ-pp4" firstAttribute="leading" secondItem="ft9-vC-Mfy" secondAttribute="leading" constant="20" symbolic="YES" id="JFS-em-XWa"/>
+                            <constraint firstItem="sC7-yL-sGl" firstAttribute="top" secondItem="P4S-wQ-pp4" secondAttribute="bottom" constant="11" id="JLL-MS-xFL"/>
+                            <constraint firstAttribute="trailing" secondItem="P4S-wQ-pp4" secondAttribute="trailing" constant="20" symbolic="YES" id="LBa-pw-Z2N"/>
+                            <constraint firstAttribute="bottom" secondItem="sC7-yL-sGl" secondAttribute="bottom" constant="20" symbolic="YES" id="key-pf-KVJ"/>
+                        </constraints>
+                        <animations/>
+                    </view>
+                </viewController>
+                <customObject id="XFa-6x-myT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508.5" y="835.5"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController title="Preferences" storyboardIdentifier="Preferences Storyboard" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="PreferencesViewController" customModule="Beddy_Butler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="391"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9YV-6d-duo" userLabel="Bed timeframe title">
+                                <rect key="frame" x="16" y="354" width="99" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Bed timeframe" id="0I3-2x-FeU">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IKg-h5-2i7">
+                                <rect key="frame" x="18" y="346" width="424" height="5"/>
+                                <animations/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jAX-7a-Ve5">
+                                <rect key="frame" x="16" y="223" width="88" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Butler Sound" id="0Ea-IV-Ff8">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-Tc-T35">
+                                <rect key="frame" x="18" y="214" width="424" height="5"/>
+                                <animations/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-5H-bzb">
+                                <rect key="frame" x="18" y="29" width="174" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="1OW-2e-LWq"/>
+                                </constraints>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Run applet at startup?" bezelStyle="regularSquare" imagePosition="right" alignment="left" inset="2" id="OMw-G7-fPB">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeRunStartup:" target="XfG-lQ-9wD" id="Trn-6v-XjF"/>
+                                    <binding destination="45n-s1-uBZ" name="value" keyPath="values.runStartup" id="g68-sb-Aiz"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UIv-9V-JTG" userLabel="Start time label">
+                                <rect key="frame" x="26" y="269" width="64" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start time" id="MAq-E0-8eK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-dy-GqU" userLabel="Bed time text value">
+                                <rect key="frame" x="370" y="294" width="61" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="99:99:99" id="w7j-fu-Rhk" userLabel="Bed time value">
+                                    <dateFormatter key="formatter" timeStyle="medium" id="mBR-s5-5DQ"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="45n-s1-uBZ" name="value" keyPath="values.bedTimeValue" id="A7Y-iR-ogF"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Twh-Ep-Mud" userLabel="Start time text value">
+                                <rect key="frame" x="28" y="295" width="61" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="99:99:99" id="DMc-Eq-Dg3">
+                                    <dateFormatter key="formatter" timeStyle="medium" id="rSR-F9-2z7"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="45n-s1-uBZ" name="value" keyPath="values.startTimeValue" id="3Xa-zR-2xu">
+                                        <dictionary key="options">
+                                            <string key="NSMultipleValuesPlaceholder">20:00:00</string>
+                                            <string key="NSNoSelectionPlaceholder">20:00:00</string>
+                                            <string key="NSNotApplicablePlaceholder">20:00:00</string>
+                                            <string key="NSNullPlaceholder">20:00:00</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
+                            <matrix verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlT-WD-j4a" userLabel="Sound List">
+                                <rect key="frame" x="20" y="115" width="100" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ra2-va-z8n"/>
+                                </constraints>
+                                <animations/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <size key="cellSize" width="74" height="18"/>
+                                <size key="intercellSpacing" width="20" height="5"/>
+                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="D07-yy-biw">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <cells>
+                                    <column>
+                                        <buttonCell type="radio" title="Shy" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="3HS-zV-zrT">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Insistent" imagePosition="left" alignment="left" inset="2" id="qeO-hm-0AD">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Zombie" imagePosition="left" alignment="left" inset="2" id="U0W-4z-SAo">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                </cells>
+                                <connections>
+                                    <binding destination="45n-s1-uBZ" name="selectedValue" keyPath="values.selectedSound" id="PLJ-L2-QBC"/>
+                                </connections>
+                            </matrix>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipR-ke-7Ku">
+                                <rect key="frame" x="18" y="67" width="118" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="pY1-RW-vOt"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Startup" id="hRZ-q9-nCD">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wwf-ui-lXH">
+                                <rect key="frame" x="20" y="65" width="422" height="5"/>
+                                <animations/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-Vz-LgP" userLabel="Preview title">
+                                <rect key="frame" x="116" y="193" width="52" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preview" id="io0-pi-MNw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button identifier="Preview Shy" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4O-ph-Kvi" userLabel="Shy Button">
+                                <rect key="frame" x="126" y="161" width="32" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="rBe-h6-SqJ"/>
+                                </constraints>
+                                <animations/>
+                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BAs-sz-hdj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="previewAudio:" target="XfG-lQ-9wD" id="Yek-dO-Qxq"/>
+                                </connections>
+                            </button>
+                            <button identifier="Preview Insistent" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-iV-TbX" userLabel="Insistent Button">
+                                <rect key="frame" x="126" y="137" width="32" height="25"/>
+                                <animations/>
+                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y7V-0K-9xk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="previewAudio:" target="XfG-lQ-9wD" id="Ssh-OG-2Of"/>
+                                </connections>
+                            </button>
+                            <button identifier="Preview Zombie" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-k8-qo9" userLabel="Zombie Button">
+                                <rect key="frame" x="126" y="113" width="32" height="25"/>
+                                <animations/>
+                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PDU-68-5YQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="previewAudio:" target="XfG-lQ-9wD" id="UPH-N8-uro"/>
+                                </connections>
+                            </button>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-pG-pTk" customClass="FrequencySlider" customModule="Beddy_Butler" customModuleProvider="target">
+                                <rect key="frame" x="312" y="160" width="28" height="30"/>
+                                <animations/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="15" doubleValue="15" allowsTickMarkValuesOnly="YES" sliderType="circular" id="aZa-AF-I1A"/>
+                                <connections>
+                                    <binding destination="45n-s1-uBZ" name="value" keyPath="values.frequency" id="26B-iL-GK6">
+                                        <dictionary key="options">
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-Iz-XKN" userLabel="Preview title">
+                                <rect key="frame" x="312" y="193" width="77" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="oS7-nA-iqe"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frequency" id="TBb-iB-Uk8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emh-Gg-8BX">
+                                <rect key="frame" x="344" y="163" width="123" height="20"/>
+                                <animations/>
+                                <textFieldCell key="cell" continuous="YES" sendsActionOnEndEditing="YES" placeholderString="0" id="uBE-WV-dCN">
+                                    <customFormatter key="formatter" id="acU-GB-krY" customClass="RandomnessFormatter" customModule="Beddy_Butler" customModuleProvider="target"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="45n-s1-uBZ" name="value" keyPath="values.frequency" id="eP4-av-Q2J">
+                                        <dictionary key="options">
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
+                            <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-36-gSj" customClass="DoubleSliderHandler" customModule="Beddy_Butler" customModuleProvider="target">
+                                <rect key="frame" x="100" y="292" width="260" height="20"/>
+                                <animations/>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mQS-GF-IkJ" userLabel="Bed time label">
+                                <rect key="frame" x="371" y="269" width="58" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bed time" id="ev6-Px-hjK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jAX-7a-Ve5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="15a-am-0QV"/>
+                            <constraint firstItem="UIv-9V-JTG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="28" id="4zG-Ku-mu4"/>
+                            <constraint firstAttribute="trailing" secondItem="9YV-6d-duo" secondAttribute="trailing" constant="367" id="8FW-RI-DH5"/>
+                            <constraint firstItem="9YV-6d-duo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="8bB-zd-0D8"/>
+                            <constraint firstItem="UIv-9V-JTG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="105" id="8g4-Nh-19Y"/>
+                            <constraint firstItem="Twh-Ep-Mud" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="9Tl-28-6DW"/>
+                            <constraint firstAttribute="trailing" secondItem="mQS-GF-IkJ" secondAttribute="trailing" constant="53" id="Kvb-FO-jON"/>
+                            <constraint firstItem="txJ-dy-GqU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="80" id="LQL-U7-LMX"/>
+                            <constraint firstItem="H7B-36-gSj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="79" id="YLj-Zo-0n1"/>
+                            <constraint firstItem="Twh-Ep-Mud" firstAttribute="centerY" secondItem="txJ-dy-GqU" secondAttribute="centerY" constant="-1" id="ebn-hc-uSQ"/>
+                            <constraint firstItem="jAX-7a-Ve5" firstAttribute="top" secondItem="UIv-9V-JTG" secondAttribute="bottom" constant="29" id="fVo-bd-WGs"/>
+                            <constraint firstItem="IKg-h5-2i7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="43" id="gBh-af-aC2"/>
+                            <constraint firstAttribute="trailing" secondItem="txJ-dy-GqU" secondAttribute="trailing" constant="51" id="rXz-4d-lyH"/>
+                            <constraint firstItem="UIv-9V-JTG" firstAttribute="centerY" secondItem="mQS-GF-IkJ" secondAttribute="centerY" id="vZU-03-XbG"/>
+                            <constraint firstAttribute="trailing" secondItem="ipR-ke-7Ku" secondAttribute="trailing" constant="346" id="xnE-lS-IfZ"/>
+                            <constraint firstItem="9YV-6d-duo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="zus-71-4za"/>
+                        </constraints>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="doubleSliderHandler" destination="H7B-36-gSj" id="byq-oc-049"/>
+                        <outlet property="endTimeTextValue" destination="txJ-dy-GqU" id="Qdf-C8-fj4"/>
+                        <outlet property="startTimeTextValue" destination="Twh-Ep-Mud" id="RAw-Mo-wew"/>
+                        <outlet property="userDefaults" destination="45n-s1-uBZ" id="toQ-9g-rdm"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="45n-s1-uBZ"/>
+            </objects>
+            <point key="canvasLocation" x="-245" y="452.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="NSSlideshowTemplate" width="17" height="14"/>
+    </resources>
+</document>

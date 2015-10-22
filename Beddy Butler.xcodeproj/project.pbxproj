@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D076B6F1BA57F5B0052047C /* DoubleSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D076B6E1BA57F5B0052047C /* DoubleSliderView.swift */; };
+		2D20F5B81B84CF3F00FE7EFC /* ButlerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D20F5B71B84CF3F00FE7EFC /* ButlerTimer.swift */; };
+		2D28669E1BA994CB00E2B35F /* DoubleSliderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28669D1BA994CB00E2B35F /* DoubleSliderCellView.swift */; };
+		2D2D56F21B9CD68C00705495 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D56F11B9CD68C00705495 /* NotificationKeys.swift */; };
+		2D30884B1B83878E0015E1A0 /* Betty_ButlerUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D30884A1B83878E0015E1A0 /* Betty_ButlerUserDefaultsTests.swift */; };
+		2D32ADB81B7FBA0500E03480 /* Insistent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2D32ADB71B7FBA0500E03480 /* Insistent.aiff */; };
+		2D32ADBA1B7FBA0B00E03480 /* Shy.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2D32ADB91B7FBA0B00E03480 /* Shy.aiff */; };
+		2D32ADBC1B7FBA2B00E03480 /* Zombie.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2D32ADBB1B7FBA2B00E03480 /* Zombie.aiff */; };
+		2D45EB821BB7F61F00FCEAC2 /* DoubleSliderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45EB801BB7F61F00FCEAC2 /* DoubleSliderHandler.swift */; };
+		2D45EB831BB7F61F00FCEAC2 /* SliderHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45EB811BB7F61F00FCEAC2 /* SliderHandle.swift */; };
+		2D4B84851B87230F00735187 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B84841B87230F00735187 /* UserDefaultKeys.swift */; };
+		2D5AD2191B87597A008953B1 /* Beddy_ButlerTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AD2181B87597A008953B1 /* Beddy_ButlerTimerTests.swift */; };
+		2D6082C11BC669EB00FFF44C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6082C01BC669EB00FFF44C /* AboutViewController.swift */; };
+		2D9B85331B83678F002795F8 /* Beddy_ButlerAudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B85321B83678F002795F8 /* Beddy_ButlerAudioTests.swift */; };
+		2D9B85361B836944002795F8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B85351B836944002795F8 /* AudioPlayer.swift */; };
+		2DAF9DE91BBD57B20021FD0D /* SliderKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF9DE81BBD57B20021FD0D /* SliderKeys.swift */; };
+		2DC766FF1B78D25F00866072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC766FE1B78D25F00866072 /* AppDelegate.swift */; };
+		2DC767011B78D25F00866072 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC767001B78D25F00866072 /* PreferencesViewController.swift */; };
+		2DC767031B78D25F00866072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC767021B78D25F00866072 /* Images.xcassets */; };
+		2DC767061B78D25F00866072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC767041B78D25F00866072 /* Main.storyboard */; };
+		2DC767121B78D25F00866072 /* Beddy_ButlerSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC767111B78D25F00866072 /* Beddy_ButlerSliderTests.swift */; };
+		2DD2B24C1B91E26B006318E8 /* RandomnessFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD2B24B1B91E26B006318E8 /* RandomnessFormatter.swift */; };
+		2DD2B24E1B91F6D1006318E8 /* FrequencySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD2B24D1B91F6D1006318E8 /* FrequencySlider.swift */; };
+		2DD349001BAEBF9F0097D9E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD348FF1BAEBF9F0097D9E5 /* AppDelegate.swift */; };
+		2DD349021BAEBF9F0097D9E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD349011BAEBF9F0097D9E5 /* ViewController.swift */; };
+		2DD349041BAEBF9F0097D9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD349031BAEBF9F0097D9E5 /* Assets.xcassets */; };
+		2DD349071BAEBF9F0097D9E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD349051BAEBF9F0097D9E5 /* Main.storyboard */; };
+		2DD3490D1BAEC16E0097D9E5 /* BeddyButlerHelperApp.app in Copy BeddyButlerHelperApp */ = {isa = PBXBuildFile; fileRef = 2DD348FD1BAEBF9F0097D9E5 /* BeddyButlerHelperApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DC7670C1B78D25F00866072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DC766F11B78D25F00866072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DC766F81B78D25F00866072;
+			remoteInfo = "Beddy Butler";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2DD3490C1BAEC1350097D9E5 /* Copy BeddyButlerHelperApp */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				2DD3490D1BAEC16E0097D9E5 /* BeddyButlerHelperApp.app in Copy BeddyButlerHelperApp */,
+			);
+			name = "Copy BeddyButlerHelperApp";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2D076B6E1BA57F5B0052047C /* DoubleSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleSliderView.swift; path = "Beddy Butler/DoubleSliderView.swift"; sourceTree = "<group>"; };
+		2D20F5B71B84CF3F00FE7EFC /* ButlerTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButlerTimer.swift; sourceTree = "<group>"; };
+		2D28669D1BA994CB00E2B35F /* DoubleSliderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleSliderCellView.swift; path = "Beddy Butler/DoubleSliderCellView.swift"; sourceTree = "<group>"; };
+		2D2D56F11B9CD68C00705495 /* NotificationKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
+		2D30884A1B83878E0015E1A0 /* Betty_ButlerUserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Betty_ButlerUserDefaultsTests.swift; sourceTree = "<group>"; };
+		2D32ADB71B7FBA0500E03480 /* Insistent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Insistent.aiff; sourceTree = "<group>"; };
+		2D32ADB91B7FBA0B00E03480 /* Shy.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Shy.aiff; sourceTree = "<group>"; };
+		2D32ADBB1B7FBA2B00E03480 /* Zombie.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Zombie.aiff; sourceTree = "<group>"; };
+		2D45EB801BB7F61F00FCEAC2 /* DoubleSliderHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSliderHandler.swift; sourceTree = "<group>"; };
+		2D45EB811BB7F61F00FCEAC2 /* SliderHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderHandle.swift; sourceTree = "<group>"; };
+		2D4B84841B87230F00735187 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		2D5AD2181B87597A008953B1 /* Beddy_ButlerTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beddy_ButlerTimerTests.swift; sourceTree = "<group>"; };
+		2D6082C01BC669EB00FFF44C /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		2D9B85321B83678F002795F8 /* Beddy_ButlerAudioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beddy_ButlerAudioTests.swift; sourceTree = "<group>"; };
+		2D9B85351B836944002795F8 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		2DAF9DE81BBD57B20021FD0D /* SliderKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderKeys.swift; sourceTree = "<group>"; };
+		2DC766F91B78D25F00866072 /* Beddy Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beddy Butler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC766FD1B78D25F00866072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DC766FE1B78D25F00866072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2DC767001B78D25F00866072 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		2DC767021B78D25F00866072 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2DC767051B78D25F00866072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2DC7670B1B78D25F00866072 /* Beddy ButlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Beddy ButlerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC767101B78D25F00866072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DC767111B78D25F00866072 /* Beddy_ButlerSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beddy_ButlerSliderTests.swift; sourceTree = "<group>"; };
+		2DD2B24B1B91E26B006318E8 /* RandomnessFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomnessFormatter.swift; sourceTree = "<group>"; };
+		2DD2B24D1B91F6D1006318E8 /* FrequencySlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencySlider.swift; sourceTree = "<group>"; };
+		2DD348FD1BAEBF9F0097D9E5 /* BeddyButlerHelperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeddyButlerHelperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD348FF1BAEBF9F0097D9E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2DD349011BAEBF9F0097D9E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2DD349031BAEBF9F0097D9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2DD349061BAEBF9F0097D9E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2DD349081BAEBF9F0097D9E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD3490E1BAEC1B30097D9E5 /* Beddy Butler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Beddy Butler.entitlements"; sourceTree = "<group>"; };
+		2DD349131BAEC8880097D9E5 /* BeddyButlerHelperApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BeddyButlerHelperApp.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DC766F61B78D25F00866072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC767081B78D25F00866072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD348FA1BAEBF9F0097D9E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D32ADB61B7FB9EE00E03480 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2D32ADB71B7FBA0500E03480 /* Insistent.aiff */,
+				2D32ADB91B7FBA0B00E03480 /* Shy.aiff */,
+				2D32ADBB1B7FBA2B00E03480 /* Zombie.aiff */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		2D45EB7F1BB7F5AA00FCEAC2 /* Archived Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2D076B6E1BA57F5B0052047C /* DoubleSliderView.swift */,
+				2D28669D1BA994CB00E2B35F /* DoubleSliderCellView.swift */,
+			);
+			name = "Archived Classes";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		2D9B85341B83691E002795F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D9B85351B836944002795F8 /* AudioPlayer.swift */,
+				2D20F5B71B84CF3F00FE7EFC /* ButlerTimer.swift */,
+				2D45EB811BB7F61F00FCEAC2 /* SliderHandle.swift */,
+				2D4B84841B87230F00735187 /* UserDefaultKeys.swift */,
+				2D2D56F11B9CD68C00705495 /* NotificationKeys.swift */,
+				2DAF9DE81BBD57B20021FD0D /* SliderKeys.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2DC766F01B78D25F00866072 = {
+			isa = PBXGroup;
+			children = (
+				2DC766FB1B78D25F00866072 /* Beddy Butler */,
+				2DC7670E1B78D25F00866072 /* Beddy ButlerTests */,
+				2DD348FE1BAEBF9F0097D9E5 /* BeddyButlerHelperApp */,
+				2DC766FA1B78D25F00866072 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DC766FA1B78D25F00866072 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DC766F91B78D25F00866072 /* Beddy Butler.app */,
+				2DC7670B1B78D25F00866072 /* Beddy ButlerTests.xctest */,
+				2DD348FD1BAEBF9F0097D9E5 /* BeddyButlerHelperApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DC766FB1B78D25F00866072 /* Beddy Butler */ = {
+			isa = PBXGroup;
+			children = (
+				2DD3490E1BAEC1B30097D9E5 /* Beddy Butler.entitlements */,
+				2DC766FE1B78D25F00866072 /* AppDelegate.swift */,
+				2DC767041B78D25F00866072 /* Main.storyboard */,
+				2DC7671C1B78D38600866072 /* Controllers */,
+				2D9B85341B83691E002795F8 /* Models */,
+				2DC7671B1B78D37A00866072 /* Views */,
+				2DC767021B78D25F00866072 /* Images.xcassets */,
+				2D45EB7F1BB7F5AA00FCEAC2 /* Archived Classes */,
+				2D32ADB61B7FB9EE00E03480 /* Assets */,
+				2DC766FC1B78D25F00866072 /* Supporting Files */,
+			);
+			path = "Beddy Butler";
+			sourceTree = "<group>";
+		};
+		2DC766FC1B78D25F00866072 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DC766FD1B78D25F00866072 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DC7670E1B78D25F00866072 /* Beddy ButlerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D5AD2181B87597A008953B1 /* Beddy_ButlerTimerTests.swift */,
+				2D30884A1B83878E0015E1A0 /* Betty_ButlerUserDefaultsTests.swift */,
+				2DC767111B78D25F00866072 /* Beddy_ButlerSliderTests.swift */,
+				2D9B85321B83678F002795F8 /* Beddy_ButlerAudioTests.swift */,
+				2DC7670F1B78D25F00866072 /* Supporting Files */,
+			);
+			path = "Beddy ButlerTests";
+			sourceTree = "<group>";
+		};
+		2DC7670F1B78D25F00866072 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DC767101B78D25F00866072 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DC7671B1B78D37A00866072 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D45EB801BB7F61F00FCEAC2 /* DoubleSliderHandler.swift */,
+				2DD2B24D1B91F6D1006318E8 /* FrequencySlider.swift */,
+				2DD2B24B1B91E26B006318E8 /* RandomnessFormatter.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2DC7671C1B78D38600866072 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DC767001B78D25F00866072 /* PreferencesViewController.swift */,
+				2D6082C01BC669EB00FFF44C /* AboutViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2DD348FE1BAEBF9F0097D9E5 /* BeddyButlerHelperApp */ = {
+			isa = PBXGroup;
+			children = (
+				2DD349131BAEC8880097D9E5 /* BeddyButlerHelperApp.entitlements */,
+				2DD348FF1BAEBF9F0097D9E5 /* AppDelegate.swift */,
+				2DD349011BAEBF9F0097D9E5 /* ViewController.swift */,
+				2DD349031BAEBF9F0097D9E5 /* Assets.xcassets */,
+				2DD349051BAEBF9F0097D9E5 /* Main.storyboard */,
+				2DD349081BAEBF9F0097D9E5 /* Info.plist */,
+			);
+			path = BeddyButlerHelperApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DC766F81B78D25F00866072 /* Beddy Butler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC767151B78D25F00866072 /* Build configuration list for PBXNativeTarget "Beddy Butler" */;
+			buildPhases = (
+				2DC766F51B78D25F00866072 /* Sources */,
+				2DC766F61B78D25F00866072 /* Frameworks */,
+				2D6082BF1BC576C100FFF44C /* Run Script */,
+				2DC766F71B78D25F00866072 /* Resources */,
+				2DD3490C1BAEC1350097D9E5 /* Copy BeddyButlerHelperApp */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Beddy Butler";
+			productName = "Beddy Butler";
+			productReference = 2DC766F91B78D25F00866072 /* Beddy Butler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2DC7670A1B78D25F00866072 /* Beddy ButlerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC767181B78D25F00866072 /* Build configuration list for PBXNativeTarget "Beddy ButlerTests" */;
+			buildPhases = (
+				2DC767071B78D25F00866072 /* Sources */,
+				2DC767081B78D25F00866072 /* Frameworks */,
+				2DC767091B78D25F00866072 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DC7670D1B78D25F00866072 /* PBXTargetDependency */,
+			);
+			name = "Beddy ButlerTests";
+			productName = "Beddy ButlerTests";
+			productReference = 2DC7670B1B78D25F00866072 /* Beddy ButlerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2DD348FC1BAEBF9F0097D9E5 /* BeddyButlerHelperApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DD349091BAEBF9F0097D9E5 /* Build configuration list for PBXNativeTarget "BeddyButlerHelperApp" */;
+			buildPhases = (
+				2DD348F91BAEBF9F0097D9E5 /* Sources */,
+				2DD348FA1BAEBF9F0097D9E5 /* Frameworks */,
+				2DD348FB1BAEBF9F0097D9E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeddyButlerHelperApp;
+			productName = BeddyButlerHelperApp;
+			productReference = 2DD348FD1BAEBF9F0097D9E5 /* BeddyButlerHelperApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DC766F11B78D25F00866072 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "David Garces";
+				TargetAttributes = {
+					2DC766F81B78D25F00866072 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 64LV943Y52;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					2DC7670A1B78D25F00866072 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 2DC766F81B78D25F00866072;
+					};
+					2DD348FC1BAEBF9F0097D9E5 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 64LV943Y52;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2DC766F41B78D25F00866072 /* Build configuration list for PBXProject "Beddy Butler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2DC766F01B78D25F00866072;
+			productRefGroup = 2DC766FA1B78D25F00866072 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DC766F81B78D25F00866072 /* Beddy Butler */,
+				2DC7670A1B78D25F00866072 /* Beddy ButlerTests */,
+				2DD348FC1BAEBF9F0097D9E5 /* BeddyButlerHelperApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DC766F71B78D25F00866072 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D32ADBC1B7FBA2B00E03480 /* Zombie.aiff in Resources */,
+				2D32ADB81B7FBA0500E03480 /* Insistent.aiff in Resources */,
+				2DC767031B78D25F00866072 /* Images.xcassets in Resources */,
+				2DC767061B78D25F00866072 /* Main.storyboard in Resources */,
+				2D32ADBA1B7FBA0B00E03480 /* Shy.aiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC767091B78D25F00866072 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD348FB1BAEBF9F0097D9E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD349041BAEBF9F0097D9E5 /* Assets.xcassets in Resources */,
+				2DD349071BAEBF9F0097D9E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D6082BF1BC576C100FFF44C /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DC766F51B78D25F00866072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D45EB821BB7F61F00FCEAC2 /* DoubleSliderHandler.swift in Sources */,
+				2D4B84851B87230F00735187 /* UserDefaultKeys.swift in Sources */,
+				2DAF9DE91BBD57B20021FD0D /* SliderKeys.swift in Sources */,
+				2D20F5B81B84CF3F00FE7EFC /* ButlerTimer.swift in Sources */,
+				2D28669E1BA994CB00E2B35F /* DoubleSliderCellView.swift in Sources */,
+				2DD2B24C1B91E26B006318E8 /* RandomnessFormatter.swift in Sources */,
+				2D9B85361B836944002795F8 /* AudioPlayer.swift in Sources */,
+				2DC767011B78D25F00866072 /* PreferencesViewController.swift in Sources */,
+				2D076B6F1BA57F5B0052047C /* DoubleSliderView.swift in Sources */,
+				2D2D56F21B9CD68C00705495 /* NotificationKeys.swift in Sources */,
+				2D6082C11BC669EB00FFF44C /* AboutViewController.swift in Sources */,
+				2D45EB831BB7F61F00FCEAC2 /* SliderHandle.swift in Sources */,
+				2DC766FF1B78D25F00866072 /* AppDelegate.swift in Sources */,
+				2DD2B24E1B91F6D1006318E8 /* FrequencySlider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC767071B78D25F00866072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5AD2191B87597A008953B1 /* Beddy_ButlerTimerTests.swift in Sources */,
+				2DC767121B78D25F00866072 /* Beddy_ButlerSliderTests.swift in Sources */,
+				2D9B85331B83678F002795F8 /* Beddy_ButlerAudioTests.swift in Sources */,
+				2D30884B1B83878E0015E1A0 /* Betty_ButlerUserDefaultsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD348F91BAEBF9F0097D9E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD349021BAEBF9F0097D9E5 /* ViewController.swift in Sources */,
+				2DD349001BAEBF9F0097D9E5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DC7670D1B78D25F00866072 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DC766F81B78D25F00866072 /* Beddy Butler */;
+			targetProxy = 2DC7670C1B78D25F00866072 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2DC767041B78D25F00866072 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DC767051B78D25F00866072 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2DD349051BAEBF9F0097D9E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DD349061BAEBF9F0097D9E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2DC767131B78D25F00866072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2DC767141B78D25F00866072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2DC767161B78D25F00866072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Beddy Butler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nellwatson.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2DC767171B78D25F00866072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Beddy Butler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nellwatson.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+			};
+			name = Release;
+		};
+		2DC767191B78D25F00866072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Beddy ButlerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.quantacorp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beddy Butler.app/Contents/MacOS/Beddy Butler";
+			};
+			name = Debug;
+		};
+		2DC7671A1B78D25F00866072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Beddy ButlerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.quantacorp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beddy Butler.app/Contents/MacOS/Beddy Butler";
+			};
+			name = Release;
+		};
+		2DD3490A1BAEBF9F0097D9E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BeddyButlerHelperApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nellwatson.BeddyButlerHelperApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2DD3490B1BAEBF9F0097D9E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BeddyButlerHelperApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nellwatson.BeddyButlerHelperApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DC766F41B78D25F00866072 /* Build configuration list for PBXProject "Beddy Butler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC767131B78D25F00866072 /* Debug */,
+				2DC767141B78D25F00866072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC767151B78D25F00866072 /* Build configuration list for PBXNativeTarget "Beddy Butler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC767161B78D25F00866072 /* Debug */,
+				2DC767171B78D25F00866072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC767181B78D25F00866072 /* Build configuration list for PBXNativeTarget "Beddy ButlerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC767191B78D25F00866072 /* Debug */,
+				2DC7671A1B78D25F00866072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DD349091BAEBF9F0097D9E5 /* Build configuration list for PBXNativeTarget "BeddyButlerHelperApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DD3490A1BAEBF9F0097D9E5 /* Debug */,
+				2DD3490B1BAEBF9F0097D9E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DC766F11B78D25F00866072 /* Project object */;
+}
