@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9058"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -32,16 +32,6 @@
                                         <menuItem title="Preferences…" keyEquivalent="," id="5JI-LV-irr">
                                             <connections>
                                                 <segue destination="XfG-lQ-9wD" kind="modal" id="OUG-1s-vbT"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="YIf-r7-Yq2"/>
-                                        <menuItem title="Help" id="qkF-Xv-hBV">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Help" systemMenu="help" id="FxK-a3-n3J"/>
-                                        </menuItem>
-                                        <menuItem title="Beddy Butler Help" keyEquivalent="?" id="cq8-UM-pNh">
-                                            <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="cLq-al-ye8"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="stD-ui-4Ai"/>
@@ -242,6 +232,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9YV-6d-duo" userLabel="Bed timeframe title">
                                 <rect key="frame" x="16" y="354" width="99" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="QFU-Eu-QPc"/>
+                                    <constraint firstAttribute="height" constant="17" id="yvO-ye-kg5"/>
+                                </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Bed timeframe" id="0I3-2x-FeU">
                                     <font key="font" metaFont="systemBold"/>
@@ -249,8 +243,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IKg-h5-2i7">
-                                <rect key="frame" x="18" y="346" width="424" height="5"/>
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IKg-h5-2i7">
+                                <rect key="frame" x="18" y="346" width="424" height="4"/>
                                 <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -265,17 +259,19 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-Tc-T35">
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-Tc-T35">
                                 <rect key="frame" x="18" y="214" width="424" height="5"/>
                                 <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-5H-bzb">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-5H-bzb">
                                 <rect key="frame" x="18" y="29" width="174" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="1OW-2e-LWq"/>
+                                    <constraint firstAttribute="height" constant="28" id="2M1-yh-Rp2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="pYk-5V-uir"/>
                                 </constraints>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Run applet at startup?" bezelStyle="regularSquare" imagePosition="right" alignment="left" inset="2" id="OMw-G7-fPB">
@@ -329,9 +325,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     </binding>
                                 </connections>
                             </textField>
-                            <matrix verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlT-WD-j4a" userLabel="Sound List">
+                            <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlT-WD-j4a" userLabel="Sound List">
                                 <rect key="frame" x="20" y="115" width="100" height="70"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="19i-vv-V0l"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="85A-9b-Ovo"/>
                                     <constraint firstAttribute="width" constant="100" id="ra2-va-z8n"/>
                                 </constraints>
                                 <animations/>
@@ -362,9 +360,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <binding destination="45n-s1-uBZ" name="selectedValue" keyPath="values.selectedSound" id="PLJ-L2-QBC"/>
                                 </connections>
                             </matrix>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipR-ke-7Ku">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ipR-ke-7Ku">
                                 <rect key="frame" x="18" y="67" width="118" height="24"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="4uJ-9H-zyf"/>
+                                    <constraint firstAttribute="height" constant="24" id="N8H-iz-ywZ"/>
                                     <constraint firstAttribute="width" constant="114" id="pY1-RW-vOt"/>
                                 </constraints>
                                 <animations/>
@@ -374,14 +374,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wwf-ui-lXH">
+                            <box horizontalHuggingPriority="247" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wwf-ui-lXH">
                                 <rect key="frame" x="20" y="65" width="422" height="5"/>
                                 <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-Vz-LgP" userLabel="Preview title">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-Vz-LgP" userLabel="Preview title">
                                 <rect key="frame" x="116" y="193" width="52" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preview" id="io0-pi-MNw">
@@ -390,9 +390,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button identifier="Preview Shy" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4O-ph-Kvi" userLabel="Shy Button">
+                            <button identifier="Preview Shy" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A4O-ph-Kvi" userLabel="Shy Button">
                                 <rect key="frame" x="126" y="161" width="32" height="25"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="Swd-FQ-3Kj"/>
+                                    <constraint firstAttribute="height" constant="22" id="h7I-T1-xBa"/>
                                     <constraint firstAttribute="width" constant="32" id="rBe-h6-SqJ"/>
                                 </constraints>
                                 <animations/>
@@ -404,8 +406,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <action selector="previewAudio:" target="XfG-lQ-9wD" id="Yek-dO-Qxq"/>
                                 </connections>
                             </button>
-                            <button identifier="Preview Insistent" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-iV-TbX" userLabel="Insistent Button">
+                            <button identifier="Preview Insistent" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-iV-TbX" userLabel="Insistent Button">
                                 <rect key="frame" x="126" y="137" width="32" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="GB4-oF-FHz"/>
+                                    <constraint firstAttribute="width" constant="32" id="gGu-az-hp1"/>
+                                </constraints>
                                 <animations/>
                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y7V-0K-9xk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -415,7 +421,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <action selector="previewAudio:" target="XfG-lQ-9wD" id="Ssh-OG-2Of"/>
                                 </connections>
                             </button>
-                            <button identifier="Preview Zombie" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-k8-qo9" userLabel="Zombie Button">
+                            <button identifier="Preview Zombie" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-k8-qo9" userLabel="Zombie Button">
                                 <rect key="frame" x="126" y="113" width="32" height="25"/>
                                 <animations/>
                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PDU-68-5YQ">
@@ -426,7 +432,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <action selector="previewAudio:" target="XfG-lQ-9wD" id="UPH-N8-uro"/>
                                 </connections>
                             </button>
-                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-pG-pTk" customClass="FrequencySlider" customModule="Beddy_Butler" customModuleProvider="target">
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-pG-pTk" customClass="FrequencySlider" customModule="Beddy_Butler" customModuleProvider="target">
                                 <rect key="frame" x="312" y="160" width="28" height="30"/>
                                 <animations/>
                                 <sliderCell key="cell" continuous="YES" alignment="left" maxValue="15" doubleValue="15" allowsTickMarkValuesOnly="YES" sliderType="circular" id="aZa-AF-I1A"/>
@@ -438,10 +444,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     </binding>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-Iz-XKN" userLabel="Preview title">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-Iz-XKN" userLabel="Preview title">
                                 <rect key="frame" x="312" y="193" width="77" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="oS7-nA-iqe"/>
+                                    <constraint firstAttribute="width" constant="73" id="iWF-HR-WOm"/>
                                 </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frequency" id="TBb-iB-Uk8">
@@ -450,8 +456,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emh-Gg-8BX">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emh-Gg-8BX">
                                 <rect key="frame" x="344" y="163" width="123" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RW2-QH-T6r"/>
+                                    <constraint firstAttribute="width" constant="119" id="UsU-Ui-5Ot"/>
+                                </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" continuous="YES" sendsActionOnEndEditing="YES" placeholderString="0" id="uBE-WV-dCN">
                                     <customFormatter key="formatter" id="acU-GB-krY" customClass="RandomnessFormatter" customModule="Beddy_Butler" customModuleProvider="target"/>
@@ -467,7 +477,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     </binding>
                                 </connections>
                             </textField>
-                            <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-36-gSj" customClass="DoubleSliderHandler" customModule="Beddy_Butler" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="H7B-36-gSj" customClass="DoubleSliderHandler" customModule="Beddy_Butler" customModuleProvider="target">
                                 <rect key="frame" x="100" y="292" width="260" height="20"/>
                                 <animations/>
                             </customView>
@@ -482,21 +492,54 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Rnn-5H-bzb" firstAttribute="top" secondItem="wwf-ui-lXH" secondAttribute="bottom" constant="8" symbolic="YES" id="0dt-96-dO3"/>
                             <constraint firstItem="jAX-7a-Ve5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="15a-am-0QV"/>
+                            <constraint firstItem="0jp-k8-qo9" firstAttribute="trailing" secondItem="mh5-iV-TbX" secondAttribute="trailing" id="1Wt-NY-xxo"/>
+                            <constraint firstItem="H7B-36-gSj" firstAttribute="centerX" secondItem="W6e-Tc-T35" secondAttribute="centerX" id="4P1-lr-gCw"/>
+                            <constraint firstItem="mh5-iV-TbX" firstAttribute="leading" secondItem="nlT-WD-j4a" secondAttribute="trailing" constant="6" id="4ma-Co-Pyq"/>
                             <constraint firstItem="UIv-9V-JTG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="28" id="4zG-Ku-mu4"/>
                             <constraint firstAttribute="trailing" secondItem="9YV-6d-duo" secondAttribute="trailing" constant="367" id="8FW-RI-DH5"/>
                             <constraint firstItem="9YV-6d-duo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="8bB-zd-0D8"/>
                             <constraint firstItem="UIv-9V-JTG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="105" id="8g4-Nh-19Y"/>
                             <constraint firstItem="Twh-Ep-Mud" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="9Tl-28-6DW"/>
+                            <constraint firstItem="wwf-ui-lXH" firstAttribute="leading" secondItem="ipR-ke-7Ku" secondAttribute="leading" id="ALM-3Z-Jqi"/>
+                            <constraint firstItem="IKg-h5-2i7" firstAttribute="trailing" secondItem="wwf-ui-lXH" secondAttribute="trailing" id="BaO-Iw-nzC"/>
+                            <constraint firstItem="wwf-ui-lXH" firstAttribute="top" secondItem="emh-Gg-8BX" secondAttribute="bottom" constant="95" id="EwA-a5-knt"/>
+                            <constraint firstItem="nlT-WD-j4a" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Fzm-kY-sAR"/>
                             <constraint firstAttribute="trailing" secondItem="mQS-GF-IkJ" secondAttribute="trailing" constant="53" id="Kvb-FO-jON"/>
                             <constraint firstItem="txJ-dy-GqU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="80" id="LQL-U7-LMX"/>
+                            <constraint firstAttribute="bottom" secondItem="Rnn-5H-bzb" secondAttribute="bottom" constant="31" id="Q7o-gs-gKX"/>
+                            <constraint firstItem="Vbb-Iz-XKN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="181" id="Qxs-sn-J3n"/>
+                            <constraint firstAttribute="trailing" secondItem="Vbb-Iz-XKN" secondAttribute="trailing" constant="93" id="RRH-Nn-PGr"/>
+                            <constraint firstAttribute="trailing" secondItem="emh-Gg-8BX" secondAttribute="trailing" constant="15" id="Sdw-ua-mbI"/>
+                            <constraint firstItem="H7B-36-gSj" firstAttribute="top" secondItem="IKg-h5-2i7" secondAttribute="bottom" constant="36" id="UCO-g1-K5l"/>
+                            <constraint firstItem="Rnn-5H-bzb" firstAttribute="top" secondItem="ipR-ke-7Ku" secondAttribute="bottom" constant="8" id="XpV-0i-dsS"/>
                             <constraint firstItem="H7B-36-gSj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="79" id="YLj-Zo-0n1"/>
+                            <constraint firstItem="Vbb-Iz-XKN" firstAttribute="top" secondItem="W6e-Tc-T35" secondAttribute="bottom" constant="6" id="ZHG-mn-70m"/>
+                            <constraint firstItem="0jp-k8-qo9" firstAttribute="top" secondItem="mh5-iV-TbX" secondAttribute="bottom" constant="2" id="aZB-h7-Ifh"/>
+                            <constraint firstItem="0jp-k8-qo9" firstAttribute="leading" secondItem="A4O-ph-Kvi" secondAttribute="leading" id="ab4-aW-Knq"/>
+                            <constraint firstItem="0jp-k8-qo9" firstAttribute="centerX" secondItem="PCx-Vz-LgP" secondAttribute="centerX" id="bYy-4B-4mc"/>
+                            <constraint firstItem="IKg-h5-2i7" firstAttribute="leading" secondItem="W6e-Tc-T35" secondAttribute="leading" id="cFb-ir-kWh"/>
+                            <constraint firstItem="mh5-iV-TbX" firstAttribute="top" secondItem="A4O-ph-Kvi" secondAttribute="bottom" constant="2" id="cLn-Hy-VQq"/>
                             <constraint firstItem="Twh-Ep-Mud" firstAttribute="centerY" secondItem="txJ-dy-GqU" secondAttribute="centerY" constant="-1" id="ebn-hc-uSQ"/>
                             <constraint firstItem="jAX-7a-Ve5" firstAttribute="top" secondItem="UIv-9V-JTG" secondAttribute="bottom" constant="29" id="fVo-bd-WGs"/>
                             <constraint firstItem="IKg-h5-2i7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="43" id="gBh-af-aC2"/>
+                            <constraint firstItem="H7B-36-gSj" firstAttribute="centerX" secondItem="IKg-h5-2i7" secondAttribute="centerX" id="gln-E5-FMM"/>
+                            <constraint firstItem="H7B-36-gSj" firstAttribute="leading" secondItem="Twh-Ep-Mud" secondAttribute="trailing" constant="13" id="h0m-U6-7yt"/>
+                            <constraint firstItem="0jp-k8-qo9" firstAttribute="bottom" secondItem="nlT-WD-j4a" secondAttribute="bottom" id="lMW-RN-Lfz"/>
+                            <constraint firstItem="B1b-pG-pTk" firstAttribute="top" secondItem="Vbb-Iz-XKN" secondAttribute="bottom" constant="6" id="mLe-9F-LK4"/>
+                            <constraint firstItem="Rnn-5H-bzb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="msA-kx-FLx"/>
+                            <constraint firstItem="0jp-k8-qo9" firstAttribute="leading" secondItem="mh5-iV-TbX" secondAttribute="leading" id="qrf-D7-Vzo"/>
+                            <constraint firstItem="Vbb-Iz-XKN" firstAttribute="leading" secondItem="B1b-pG-pTk" secondAttribute="leading" id="r7i-38-vQW"/>
                             <constraint firstAttribute="trailing" secondItem="txJ-dy-GqU" secondAttribute="trailing" constant="51" id="rXz-4d-lyH"/>
+                            <constraint firstItem="txJ-dy-GqU" firstAttribute="leading" secondItem="H7B-36-gSj" secondAttribute="trailing" constant="12" id="tkv-ly-CrR"/>
+                            <constraint firstItem="IKg-h5-2i7" firstAttribute="leading" secondItem="9YV-6d-duo" secondAttribute="leading" id="vMe-J7-ube"/>
                             <constraint firstItem="UIv-9V-JTG" firstAttribute="centerY" secondItem="mQS-GF-IkJ" secondAttribute="centerY" id="vZU-03-XbG"/>
+                            <constraint firstItem="ipR-ke-7Ku" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="wkV-hs-eVR"/>
+                            <constraint firstItem="ipR-ke-7Ku" firstAttribute="top" secondItem="nlT-WD-j4a" secondAttribute="bottom" constant="24" id="xKD-tY-1j6"/>
                             <constraint firstAttribute="trailing" secondItem="ipR-ke-7Ku" secondAttribute="trailing" constant="346" id="xnE-lS-IfZ"/>
+                            <constraint firstItem="Vbb-Iz-XKN" firstAttribute="baseline" secondItem="PCx-Vz-LgP" secondAttribute="baseline" id="yU4-Es-cGl"/>
+                            <constraint firstItem="H7B-36-gSj" firstAttribute="centerY" secondItem="txJ-dy-GqU" secondAttribute="centerY" id="yxy-Xh-1kb"/>
                             <constraint firstItem="9YV-6d-duo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="zus-71-4za"/>
                         </constraints>
                         <animations/>

@@ -59,13 +59,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //create a new ButlerTimer
         self.butlerTimer = ButlerTimer()
         
-        //register start at login for first time
-        if let runStartup =  sharedUserDefaults.objectForKey(UserDefaultKeys.runStartup.rawValue) as? Bool {
-            SMLoginItemSetEnabled("com.nellwatson.BeddyButlerHelperApp" as CFString, runStartup)
-        }
-        
         //register for Notifications
         registerForNotitications()
+        
+        //determine if helper app is running
+        var startedAtLogin = false
+        let apps = NSWorkspace.sharedWorkspace().runningApplications
+        for app in apps {
+            if app.bundleIdentifier == "com.nellwatson.BeddyButlerHelperApp" {
+                startedAtLogin = true
+            }
+        }
+        
+        if startedAtLogin {
+            NSDistributedNotificationCenter.defaultCenter().postNotificationName("terminateApp", object: NSBundle.mainBundle().bundleIdentifier)
+        }
         
         
     }

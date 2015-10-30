@@ -106,7 +106,6 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
-    
     @IBAction func changedPreference(sender: AnyObject) {
          NSNotificationCenter.defaultCenter().postNotificationName(NotificationKeys.userPreferenceChanged.rawValue, object: self)
     }
@@ -115,9 +114,14 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         
         if let theButton = sender as? NSButton {
             let runStartup = Bool(theButton.integerValue)
+            let loginItems = LoginItems()
                     // Turn on launch at login
-                    SMLoginItemSetEnabled("com.nellwatson.BeddyButlerHelperApp" as CFString, runStartup)
-                    
+            if runStartup {
+               loginItems.createLoginItem()
+            } else {
+                loginItems.deleteLoginItem()
+            }
+            
         }
     }
     

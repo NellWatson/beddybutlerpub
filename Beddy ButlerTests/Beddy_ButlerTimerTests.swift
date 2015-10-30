@@ -188,47 +188,8 @@ class Beddy_ButlerTimerTests: XCTestCase {
         XCTAssertTrue(butlerTimer.timer?.timeInterval > 0, "Timer1 should be initialized")
     }
     
-    func testButlerPlist() {
-        
-        //Create file manager instance
-        let fileManager = NSFileManager()
-        
-        let URLs = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)
-        
-        
-        let documentURL = URLs[0]
-        let fileURL = documentURL.URLByAppendingPathComponent("com.nellwatson.Beddy-Butler.plist")
-        
-       // NSApplication.ur
-        
-        var plistDictionary: Dictionary<String,AnyObject> = Dictionary<String,AnyObject>()
-        
-        // Create Key values
-        let label = "com.nellwatson.Beddy-Butler"
-        let programArguments = ["/Applications/EverydayTasks.app/Contents/MacOS/EverydayTasks"]
-        let processType = "Interactive"
-        let runAtLoad = true
-        let keepAlive = true
-        
-        // Assign Key values to keys
-        plistDictionary["Label"] = label
-        plistDictionary["ProgramArguments"] = programArguments
-        plistDictionary["ProcessType"] = processType
-        plistDictionary["RunAtLoad"] = runAtLoad
-        plistDictionary["KeepAlive"] = keepAlive
-        
-        do {
-            let data = try NSPropertyListSerialization.dataWithPropertyList(plistDictionary, format: NSPropertyListFormat.XMLFormat_v1_0, options: NSPropertyListWriteOptions.init())
-            XCTAssert(data.length > 0)
-            fileManager.createFileAtPath(fileURL.path!, contents: data, attributes: nil)
-            
-        } catch {
-            NSLog("Error while creating agent file")
-        }
-        
-        
-       
-    }
+   
+    
     
     func testButlerText() {
         
@@ -242,35 +203,76 @@ class Beddy_ButlerTimerTests: XCTestCase {
         let fileURL = documentURL.URLByAppendingPathComponent("textFile.txt")
         
         // NSApplication.ur
-        
-        do {
-            
+    
             let data = "hola 2".dataUsingEncoding(NSUTF8StringEncoding)
             
             //let data = try NSPropertyListSerialization.dataWithPropertyList(plistDictionary, format: NSPropertyListFormat.XMLFormat_v1_0, options: NSPropertyListWriteOptions.init())
             XCTAssert(data!.length > 0)
             fileManager.createFileAtPath(fileURL.path!, contents: data, attributes: nil)
-            
-        } catch {
-            NSLog("Error while creating agent file")
-        }
-        
-        
         
     }
+
+    func testButlerActive() {
+        // Check if main app is already running; if yes, do nothing and terminate helper app
+        var isAlreadyRunning = false
+        var isActive = false
+
+        let running = NSWorkspace.sharedWorkspace().runningApplications
+
+        for app in running {
+            if app.bundleIdentifier == "com.nellwatson.Beddy-Butler" {
+                isAlreadyRunning = true
+                isActive = NSApp.active
+            }
+
+        }
+        
+        XCTAssert(isActive)
+        XCTAssert(isAlreadyRunning)
+
+    }
     
-    func testBundlerPaht() {
+    //TODO: Remove log file and logging functionality -
+    func testWriteLogInternal(){
+        
+        let message = "Hi"
+        
+        //Create file manager instance
+        let fileManager = NSFileManager()
+        
         let path = NSString(string: NSBundle.mainBundle().bundlePath).stringByDeletingLastPathComponent
         let reviewedPath = NSString(string: path).stringByDeletingLastPathComponent
         let reviewedPath2 = NSString(string: reviewedPath).stringByDeletingLastPathComponent
         let reviewedPath3 = NSString(string: reviewedPath2).stringByDeletingLastPathComponent
-        let reviewedPath4 = NSString(string: reviewedPath3).stringByAppendingPathComponent("MacOs")
-        let reviewedPath5 = NSString(string: reviewedPath4).stringByAppendingPathComponent("Beddy Butler")
-        NSLog(reviewedPath5)
-        NSWorkspace.sharedWorkspace().launchApplication(reviewedPath3)
+        let reviewedPath4 = NSString(string: reviewedPath3).stringByAppendingPathComponent("Resources")
+        
+        let newURL = NSURL(string: reviewedPath4)
+        
+        let fileURL = newURL!.URLByAppendingPathComponent("BeddyButlerLog.txt")
+        
+        let data = message.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        //if !fileManager.fileExistsAtPath(fileURL) {
+        do {
+            if !fileManager.fileExistsAtPath(fileURL.path!) {
+                
+                if !fileManager.createFileAtPath(fileURL.path!, contents: data , attributes: nil) {
+                    NSLog("File not created: \(fileURL.absoluteString)")
+                }
+            }
+            
+            let handle: NSFileHandle = try NSFileHandle(forWritingToURL: fileURL)
+            handle.truncateFileAtOffset(handle.seekToEndOfFile())
+            handle.writeData(data!)
+            handle.closeFile()
+            
+        }
+        catch {
+            NSLog("Error writing to file: \(error)")
+        }
         
     }
-    
-    
+
+
 
 }
