@@ -56,6 +56,29 @@ class Beddy_ButlerAudioTests: XCTestCase {
         // In Swift 2.0 you will be able to throw an error and test that error doesn't from from
     }
     
+    func testEnumeratesAudioFiles() {
+        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
+        XCTAssert(urls?.count >= 50)
+        
+    }
+    
+    func testEnumerateZombieFiles() {
+        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
+        let zombieURLs = urls?.filter { $0.absoluteString.containsString("Zombie") }
+        XCTAssert(zombieURLs?.count >= 50)
+    }
+    
+    func testEnumerateShyFiles() {
+        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
+        let shyURLs = urls?.filter { $0.absoluteString.containsString("Shy") }
+        XCTAssert(shyURLs?.count >= 15)
+    }
+    
+    func testEnumerateInsistentFiles() {
+        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
+        let insistentURLs = urls?.filter { $0.absoluteString.containsString("Insistent") }
+        XCTAssert(insistentURLs?.count >= 15)
+    }
 
     
 }

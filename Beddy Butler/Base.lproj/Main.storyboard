@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -69,12 +69,10 @@
                         <subviews>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="230-hj-ROE">
                                 <rect key="frame" x="20" y="25" width="128" height="128"/>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSApplicationIcon" id="22b-bO-gJM"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQz-PZ-Xg6">
                                 <rect key="frame" x="174" y="129" width="160" height="24"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Beddy Butler" id="MlE-eQ-fZQ">
                                     <font key="font" size="20" name="HelveticaNeue-Light"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -83,7 +81,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEv-iq-Lre">
                                 <rect key="frame" x="174" y="104" width="229" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version 1.0" id="VKR-t0-XUq">
                                     <font key="font" metaFont="user"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -92,7 +89,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-JY-gCE">
                                 <rect key="frame" x="174" y="70" width="262" height="26"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copyright (c) 2015, Nell Watson Inc." id="fbE-MI-sFy">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -101,7 +97,6 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7af-6i-GQq">
                                 <rect key="frame" x="289" y="18" width="157" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="License Agreement" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2mV-Zk-lfo">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -112,7 +107,6 @@
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6C-9P-qVe">
                                 <rect key="frame" x="174" y="49" width="262" height="26"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="All rights reserved." id="HSH-92-ifH">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -120,7 +114,6 @@
                                 </textFieldCell>
                             </textField>
                         </subviews>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="versionTextField" destination="ZEv-iq-Lre" id="saO-vC-miZ"/>
@@ -147,7 +140,6 @@
                                         <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" baseWritingDirection="leftToRight" selectionGranularity="word" findStyle="panel" verticallyResizable="YES" quoteSubstitution="YES" dashSubstitution="YES" id="2fU-H6-Xsl">
                                             <rect key="frame" x="0.0" y="0.0" width="551" height="475"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <animations/>
                                             <color key="textColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="551" height="307"/>
@@ -180,24 +172,19 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                             <size key="maxSize" width="553" height="800"/>
                                         </textView>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
-                                <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="kbo-cI-OMg">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="zDJ-DX-6vU">
                                     <rect key="frame" x="536" y="1" width="16" height="307"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-yL-sGl">
                                 <rect key="frame" x="504" y="13" width="75" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0y6-i4-2G7">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -215,7 +202,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             <constraint firstAttribute="trailing" secondItem="P4S-wQ-pp4" secondAttribute="trailing" constant="20" symbolic="YES" id="LBa-pw-Z2N"/>
                             <constraint firstAttribute="bottom" secondItem="sC7-yL-sGl" secondAttribute="bottom" constant="20" symbolic="YES" id="key-pf-KVJ"/>
                         </constraints>
-                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="XFa-6x-myT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -236,8 +222,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="width" constant="95" id="QFU-Eu-QPc"/>
                                     <constraint firstAttribute="height" constant="17" id="yvO-ye-kg5"/>
                                 </constraints>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Bed timeframe" id="0I3-2x-FeU">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Bed Timeframe" id="0I3-2x-FeU">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -245,14 +230,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                             <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IKg-h5-2i7">
                                 <rect key="frame" x="18" y="346" width="424" height="4"/>
-                                <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jAX-7a-Ve5">
                                 <rect key="frame" x="16" y="223" width="88" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Butler Sound" id="0Ea-IV-Ff8">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -261,7 +244,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                             <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-Tc-T35">
                                 <rect key="frame" x="18" y="214" width="424" height="5"/>
-                                <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
@@ -273,7 +255,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="height" constant="28" id="2M1-yh-Rp2"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="pYk-5V-uir"/>
                                 </constraints>
-                                <animations/>
                                 <buttonCell key="cell" type="check" title="Run applet at startup?" bezelStyle="regularSquare" imagePosition="right" alignment="left" inset="2" id="OMw-G7-fPB">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -285,7 +266,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UIv-9V-JTG" userLabel="Start time label">
                                 <rect key="frame" x="26" y="269" width="64" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start time" id="MAq-E0-8eK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -294,7 +274,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-dy-GqU" userLabel="Bed time text value">
                                 <rect key="frame" x="370" y="294" width="61" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="99:99:99" id="w7j-fu-Rhk" userLabel="Bed time value">
                                     <dateFormatter key="formatter" timeStyle="medium" id="mBR-s5-5DQ"/>
                                     <font key="font" metaFont="system"/>
@@ -307,7 +286,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Twh-Ep-Mud" userLabel="Start time text value">
                                 <rect key="frame" x="28" y="295" width="61" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="99:99:99" id="DMc-Eq-Dg3">
                                     <dateFormatter key="formatter" timeStyle="medium" id="rSR-F9-2z7"/>
                                     <font key="font" metaFont="system"/>
@@ -332,7 +310,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="85A-9b-Ovo"/>
                                     <constraint firstAttribute="width" constant="100" id="ra2-va-z8n"/>
                                 </constraints>
-                                <animations/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="74" height="18"/>
                                 <size key="intercellSpacing" width="20" height="5"/>
@@ -367,7 +344,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="height" constant="24" id="N8H-iz-ywZ"/>
                                     <constraint firstAttribute="width" constant="114" id="pY1-RW-vOt"/>
                                 </constraints>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Startup" id="hRZ-q9-nCD">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -376,14 +352,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                             <box horizontalHuggingPriority="247" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wwf-ui-lXH">
                                 <rect key="frame" x="20" y="65" width="422" height="5"/>
-                                <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-Vz-LgP" userLabel="Preview title">
                                 <rect key="frame" x="116" y="193" width="52" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preview" id="io0-pi-MNw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -397,7 +371,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="height" constant="22" id="h7I-T1-xBa"/>
                                     <constraint firstAttribute="width" constant="32" id="rBe-h6-SqJ"/>
                                 </constraints>
-                                <animations/>
                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BAs-sz-hdj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -412,7 +385,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="height" constant="22" id="GB4-oF-FHz"/>
                                     <constraint firstAttribute="width" constant="32" id="gGu-az-hp1"/>
                                 </constraints>
-                                <animations/>
                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y7V-0K-9xk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -423,7 +395,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </button>
                             <button identifier="Preview Zombie" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-k8-qo9" userLabel="Zombie Button">
                                 <rect key="frame" x="126" y="113" width="32" height="25"/>
-                                <animations/>
                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PDU-68-5YQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -434,7 +405,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </button>
                             <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-pG-pTk" customClass="FrequencySlider" customModule="Beddy_Butler" customModuleProvider="target">
                                 <rect key="frame" x="312" y="160" width="28" height="30"/>
-                                <animations/>
                                 <sliderCell key="cell" continuous="YES" alignment="left" maxValue="15" doubleValue="15" allowsTickMarkValuesOnly="YES" sliderType="circular" id="aZa-AF-I1A"/>
                                 <connections>
                                     <binding destination="45n-s1-uBZ" name="value" keyPath="values.frequency" id="26B-iL-GK6">
@@ -449,7 +419,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="iWF-HR-WOm"/>
                                 </constraints>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frequency" id="TBb-iB-Uk8">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -462,7 +431,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <constraint firstAttribute="height" constant="20" id="RW2-QH-T6r"/>
                                     <constraint firstAttribute="width" constant="119" id="UsU-Ui-5Ot"/>
                                 </constraints>
-                                <animations/>
                                 <textFieldCell key="cell" continuous="YES" sendsActionOnEndEditing="YES" placeholderString="0" id="uBE-WV-dCN">
                                     <customFormatter key="formatter" id="acU-GB-krY" customClass="RandomnessFormatter" customModule="Beddy_Butler" customModuleProvider="target"/>
                                     <font key="font" metaFont="system"/>
@@ -479,11 +447,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="H7B-36-gSj" customClass="DoubleSliderHandler" customModule="Beddy_Butler" customModuleProvider="target">
                                 <rect key="frame" x="100" y="292" width="260" height="20"/>
-                                <animations/>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mQS-GF-IkJ" userLabel="Bed time label">
                                 <rect key="frame" x="371" y="269" width="58" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bed time" id="ev6-Px-hjK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -542,7 +508,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                             <constraint firstItem="H7B-36-gSj" firstAttribute="centerY" secondItem="txJ-dy-GqU" secondAttribute="centerY" id="yxy-Xh-1kb"/>
                             <constraint firstItem="9YV-6d-duo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="zus-71-4za"/>
                         </constraints>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="doubleSliderHandler" destination="H7B-36-gSj" id="byq-oc-049"/>

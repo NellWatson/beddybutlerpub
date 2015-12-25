@@ -12,6 +12,7 @@ class AudioPlayer {
     
     var audioPlayer: AVAudioPlayer?
     var soundFileURL: NSURL?
+    let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
     
     
     enum AudioFiles {
@@ -45,12 +46,14 @@ class AudioPlayer {
     /// Plays the audio file for the given file name: AudioFiles.Shy, AudioFiles.Insistent or AudioFiles.Zombie
     func playFile(file: AudioFiles) {
         
-        let soundFileURL = NSBundle.mainBundle().URLForResource(file.description(),
-            withExtension: "aiff")
+        let filteredURLs = urls?.filter { $0.absoluteString.containsString(file.description()) }
+        
+        // Select a random file from the list
+        let randomIndex = Int(arc4random_uniform(UInt32(filteredURLs!.count)))
 
         // play the file
         do {
-            try audioPlayer = AVAudioPlayer(contentsOfURL: soundFileURL!)
+            try audioPlayer = AVAudioPlayer(contentsOfURL: filteredURLs![randomIndex])
             audioPlayer?.play()
         } catch {
             NSLog("File could not be played")
