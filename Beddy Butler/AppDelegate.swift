@@ -37,11 +37,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // (as opposed to being a standard square size)
         
         // -1 to indicate "variable length"
-        AppDelegate.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+        AppDelegate.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(20)
         
         // Set the text that appears in the menu bar
         //AppDelegate.statusItem!.title = "Beddy Butler"
-        AppDelegate.statusItem?.image = NSImage(named: "Moon")
+        AppDelegate.statusItem?.image = NSImage(named: "AppIcon")
         AppDelegate.statusItem?.image?.size = NSSize(width: 18, height: 18)
         // image should be set as tempate so that it changes when the user sets the menu bar to a dark theme
         // TODO: feature disabled for now, this may possibly be the issue to why it is not showing in Nell's mac
@@ -142,7 +142,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // notification center. You will not receive sleep/wake notifications if you file
         //with the default notification center.
         NSWorkspace.sharedWorkspace().notificationCenter.addObserver(self, selector: "receiveSleepNotification:", name: NSWorkspaceWillSleepNotification, object: nil)
-        NSWorkspace.sharedWorkspace().notificationCenter.addObserver(self, selector: "receiveWakeNotification:", name: NSWorkspaceWillSleepNotification, object: nil)
+        NSWorkspace.sharedWorkspace().notificationCenter.addObserver(self, selector: "receiveWakeNotification:", name: NSWorkspaceDidWakeNotification, object: nil)
     }
     
     func deRegisterFromNotifications() {

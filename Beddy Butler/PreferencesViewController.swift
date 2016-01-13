@@ -23,6 +23,12 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet weak var doubleSliderHandler: DoubleSliderHandler!
     
+    @IBOutlet weak var iconImageView: NSImageView!
+    
+    var userSelectedSound: String? {
+        return NSUserDefaults.standardUserDefaults().objectForKey(UserDefaultKeys.selectedSound.rawValue) as? String
+    }
+    
     //MARK: View Main Events
     
     override func viewDidLoad() {
@@ -31,6 +37,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         // Do any additional setup after loading the view.
      //   loadDoubleSliderValues()
         loadDoubleSliderHandler()
+        loadSelectedImage(self.userSelectedSound!)
     }
     
     override func viewWillDisappear() {
@@ -106,6 +113,11 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
+    
+    @IBAction func changedRadioSelection(sender: NSMatrix) {
+       loadSelectedImage(sender.selectedCell()!.title)
+    }
+    
     @IBAction func changedPreference(sender: AnyObject) {
          NSNotificationCenter.defaultCenter().postNotificationName(NotificationKeys.userPreferenceChanged.rawValue, object: self)
     }
@@ -122,6 +134,21 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
                 loginItems.deleteLoginItem()
             }
             
+        }
+    }
+    
+    // MARK: Other methods
+    
+    func loadSelectedImage(currentValue: String) {
+        switch currentValue {
+        case "Shy":
+            self.iconImageView.image = NSImage(named: "ShyIcon")
+        case "Insistent":
+            self.iconImageView.image = NSImage(named: "InsistentIcon")
+        case "Zombie":
+            self.iconImageView.image = NSImage(named: "ZombieIcon")
+        default:
+            break
         }
     }
     
