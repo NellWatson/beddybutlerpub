@@ -203,7 +203,7 @@
 //    
 //    override func mouseUp(theEvent: NSEvent) {
 //        // every time the user changes any knob, the system should recalculate the timer
-//        NSNotificationCenter.defaultCenter().postNotificationName(NotificationKeys.userPreferenceChanged.rawValue, object: self)
+//        NotificationCenter.default.postNotificationName(NotificationKeys.userPreferenceChanged.rawValue, object: self)
 //        
 //        super.mouseUp(theEvent)
 //        

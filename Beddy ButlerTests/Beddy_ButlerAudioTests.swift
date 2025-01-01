@@ -42,42 +42,42 @@ class Beddy_ButlerAudioTests: XCTestCase {
     }
     
     func testInsistentAudioFileExistsandPlays() {
-        player.playFile(AudioPlayer.AudioFiles.Insistent)
+        player.playFile(file: AudioPlayer.AudioFiles.Insistent)
         // In Swift 2.0 you will be able to throw an error and test that error doesn't from from
     }
     
     func testShyAudioFileExistsandPlays() {
-        player.playFile(AudioPlayer.AudioFiles.Shy)
+        player.playFile(file: AudioPlayer.AudioFiles.Shy)
         // In Swift 2.0 you will be able to throw an error and test that error doesn't from from
     }
     
     func testZombieAudioFileExistsandPlays() {
-        player.playFile(AudioPlayer.AudioFiles.Zombie)
+        player.playFile(file: AudioPlayer.AudioFiles.Zombie)
         // In Swift 2.0 you will be able to throw an error and test that error doesn't from from
     }
     
     func testEnumeratesAudioFiles() {
-        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
-        XCTAssert(urls?.count >= 50)
+        let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil)
+        XCTAssert(urls!.count >= 50)
         
     }
     
     func testEnumerateZombieFiles() {
-        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
-        let zombieURLs = urls?.filter { $0.absoluteString.containsString("Zombie") }
-        XCTAssert(zombieURLs?.count >= 50)
+        let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil)
+        let zombieURLs = urls?.filter { $0.absoluteString.contains("Zombie") }
+        XCTAssert(zombieURLs!.count >= 50)
     }
     
     func testEnumerateShyFiles() {
-        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
-        let shyURLs = urls?.filter { $0.absoluteString.containsString("Shy") }
-        XCTAssert(shyURLs?.count >= 15)
+        let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil)
+        let shyURLs = urls?.filter { $0.absoluteString.contains("Shy") }
+        XCTAssert(shyURLs!.count >= 15)
     }
     
     func testEnumerateInsistentFiles() {
-        let urls = NSBundle.mainBundle().URLsForResourcesWithExtension("mp3", subdirectory: nil)
-        let insistentURLs = urls?.filter { $0.absoluteString.containsString("Insistent") }
-        XCTAssert(insistentURLs?.count >= 15)
+        let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil)
+        let insistentURLs = urls?.filter { $0.absoluteString.contains("Insistent") }
+        XCTAssert(insistentURLs!.count >= 15)
     }
 
     
