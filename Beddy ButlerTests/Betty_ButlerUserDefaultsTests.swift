@@ -63,13 +63,12 @@ class Betty_ButlerUserDefaultsTests: XCTestCase {
     }
 
     func testValueforNonExistingKey() {
-        let value: AnyObject? = UserDefaults.standard.object(forKey: "testKey") as AnyObject
+        let value: Any = UserDefaults.standard.object(forKey: "testKey") as Any
         XCTAssertNil(value, "value for testKey should always be nil because it does not exist")
     }
 
     func testValueForKeyBedTimeValue() {
         let value = UserDefaults.standard.object(forKey: UserDefaultKeys.bedTimeValue.rawValue) as? Double
-        NSLog("The value is: \(value)")
         XCTAssertNotNil(value)
         guard let value else { return }
         XCTAssert(value > 0, "User stored preference for bed time value can be accessed")
@@ -77,7 +76,6 @@ class Betty_ButlerUserDefaultsTests: XCTestCase {
 
     func testValueForKeyStartTimeValue() {
         let value = UserDefaults.standard.object(forKey: UserDefaultKeys.startTimeValue.rawValue) as? Double
-        NSLog("The value is: \(value)")
         guard let value else { return }
         XCTAssert(value > 0, "User stored preference for start time value can be accessed")
     }
@@ -88,14 +86,12 @@ class Betty_ButlerUserDefaultsTests: XCTestCase {
         XCTAssertNotNil(value)
         guard let value else { return }
         XCTAssert(value is Bool, "User stored preference for run at startup value can be accessed")
-        NSLog("The value is: \(value as! Bool)")
     }
 
     func testValueForKeySelectedSound() {
         let value = UserDefaults.standard.object(forKey: UserDefaultKeys.selectedSound.rawValue) as? String
         XCTAssertNotNil(value)
         guard let value else { return }
-        NSLog("The value is: \(value)")
         XCTAssertNotEqual(value, String(), "User stored preference for selected sound value can be accessed")
     }
 
@@ -104,7 +100,6 @@ class Betty_ButlerUserDefaultsTests: XCTestCase {
         XCTAssertNotNil(value)
 
         let date = NSDate(timeIntervalSince1970: value!)
-        NSLog("The date value is: \(date)")
         XCTAssertNotNil(value, "Start date can be converted to date")
     }
 

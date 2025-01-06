@@ -38,7 +38,12 @@ class Beddy_ButlerSliderTests: XCTestCase {
         
         doubleSliderHandler = nil
     }
-    
+
+    func testBaseNotNil() {
+        XCTAssertNotNil(doubleSliderHandler)
+        XCTAssertNotNil(doubleSliderHandler?.handles[SliderKeys.StartHandler.rawValue])
+    }
+
     func testStartSliderSetsValue() {
         doubleSliderHandler?.handles[SliderKeys.StartHandler.rawValue]?.curValue = 0.1
         let value = doubleSliderHandler?.handles[SliderKeys.StartHandler.rawValue]?.curValue

@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class LoginItems: NSObject {
+class LoginItems {
 
     //MARK: Variables
     let fileManager = FileManager()
@@ -44,6 +44,7 @@ class LoginItems: NSObject {
 
     func deleteLoginItem(){
 // TODO: replace code
+        /*
         let sharedFileListLoginItems = kLSSharedFileListSessionLoginItems
         let bundlePath = Bundle.main.bundleURL
 
@@ -54,10 +55,12 @@ class LoginItems: NSObject {
          //       LSSharedFileListItemRemove(loginListValue, loginItem.takeUnretainedValue())
             }
         }
+         */
     }
 
     func createLoginItem() {
         // TODO: replace code
+        /*/
         let sharedFileListLoginItems = kLSSharedFileListSessionLoginItems
         let bundlePath = Bundle.main.bundleURL
 
@@ -67,7 +70,7 @@ class LoginItems: NSObject {
             LSSharedFileListInsertItemURL(loginListValue, beforeFirstLoginItem, "Beddy Butler" as CFString, nil, bundlePath as CFURL, nil, nil)
 
         }
-
+*/
     }
 
     //MARK: Alternative login methods

@@ -9,50 +9,43 @@
 import Cocoa
 import ServiceManagement
 
-@NSApplicationMain
+@main
+@MainActor
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var butlerTimer: ButlerTimer?
 
-    static  var statusItem: NSStatusItem?
+    var statusBar: NSStatusBar!
+    var statusBarItem: NSStatusItem!
 
-    @IBOutlet weak var menu: NSMenu!
+    //@IBOutlet weak var menu: NSMenu!
 
-    var preferencesController: PreferencesViewController?
-
-    var sharedUserDefaults: UserDefaults {
-        return UserDefaults.standard
-    }
-
-    func applicationDidBecomeActive(notification: NSNotification) {
-        if let theButlerTimer = butlerTimer {
-            theButlerTimer.calculateNewTimer()
-        } else {
-            butlerTimer = ButlerTimer()
-        }
-    }
-
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Make a status bar that has variable length
-        // (as opposed to being a standard square size)
-
+    func setStatusItem() {
         // -1 to indicate "variable length"
-        AppDelegate.statusItem = NSStatusBar.system.statusItem(withLength: 20)
+        statusBar = NSStatusBar()
+        statusBarItem = statusBar.statusItem(withLength: 20)
 
         // Set the text that appears in the menu bar
         //AppDelegate.statusItem!.title = "Beddy Butler"
-        AppDelegate.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "AppIcon"))
-        AppDelegate.statusItem?.image?.size = NSSize(width: 18, height: 18)
+        statusBarItem.button?.image = NSImage(named: NSImage.Name("AppIcon"))
+        statusBarItem.button?.image?.size = NSSize(width: 18, height: 18)
         // image should be set as tempate so that it changes when the user sets the menu bar to a dark theme
         // TODO: feature disabled for now, this may possibly be the issue to why it is not showing in Nell's mac
         //AppDelegate.statusItem?.image?.setTemplate(true)
 
         // Set the menu that should appear when the item is clicked
-        AppDelegate.statusItem!.menu = self.menu
+        //statusBarItem?.menu = self.menu
 
         // Set if the item should ”
         //change color when clicked
-        AppDelegate.statusItem!.highlightMode = true
+        //statusBarItem?.highlightMode = true
+    }
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        NSLog("Calling function", #function)
+
+        // TODO: reset this
+        setStatusItem()
 
         registerUserDefaultValues()
 
@@ -60,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.butlerTimer = ButlerTimer()
 
         //register for Notifications
-        registerForNotitications()
+        registerForNotifications()
 
         //determine if helper app is running
         var startedAtLogin = false
@@ -72,34 +65,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         if startedAtLogin {
-            DistributedNotificationCenter.default().postNotificationName(NSNotification.Name(rawValue: "terminateApp"),
+            DistributedNotificationCenter.default().postNotificationName(Notification.Name(rawValue: "terminateApp"),
                                                                          object: Bundle.main.bundleIdentifier)
         }
-
-    }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-        self.butlerTimer = nil
-        deRegisterFromNotifications()
     }
 
     @IBAction func quit(sender: AnyObject) {
         NSApplication.shared.terminate(nil)
     }
 
-
     /// This method ensures that the user default values are set when the user opens the app for the first time
     /// Subsequent launches of the app will not reset these values
     func registerUserDefaultValues() {
+        var sharedUserDefaults = UserDefaults.standard
 
         for key in UserDefaultKeys.allValues {
-
             switch key {
             case .startTimeValue:
                 let theKey = sharedUserDefaults.object(forKey: key.rawValue) as? Double
                 if theKey == nil {
-
                     sharedUserDefaults.set(75000.00, forKey: key.rawValue)
                 }
             case .bedTimeValue:
@@ -130,20 +114,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+}
 
+extension AppDelegate {
+    func applicationDidBecomeActive(_ notification: Notification) {
+        NSLog("Calling function", #function)
+        if let theButlerTimer = butlerTimer {
+            theButlerTimer.calculateNewTimer()
+        } else {
+            butlerTimer = ButlerTimer()
+        }
+    }
+
+    func applicationWillTerminate(_ notification: Notification) {
+        NSLog("Calling function", #function)
+        // Insert code here to tear down your application
+        self.butlerTimer = nil
+        unregisterFromNotifications()
+    }
+}
+
+// MARK: - Notifications
+
+extension AppDelegate {
     /// Beddy Butler should get notifified when it goes to sleep to handle the current timer
-    func receiveSleepNotification(notification: NSNotification) {
-        NSLog("Sleep nottification received: \(notification.name)")
+    @objc func receiveSleepNotification(notification: Notification) {
+        NSLog("Sleep notification received: \(notification.name)")
         self.butlerTimer?.timer?.invalidate()
     }
 
     /// Beddy Butler should get notified when the PC wakes up from sleep so it can restart its timer
-    func receiveWakeNotification(notification: NSNotification) {
-        NSLog("Wake nottification received: \(notification.name)")
+    @objc func receiveWakeNotification(notification: Notification) {
+        NSLog("Wake notification received: \(notification.name)")
         self.butlerTimer?.calculateNewTimer()
     }
 
-    func registerForNotitications() {
+    private func registerForNotifications() {
         //These notifications are filed on NSWorkspace's notification center, not the default
         // notification center. You will not receive sleep/wake notifications if you file
         //with the default notification center.
@@ -152,10 +158,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: Selector(("receiveWakeNotification:")), name: NSWorkspace.didWakeNotification, object: nil)
     }
 
-    func deRegisterFromNotifications() {
+    private func unregisterFromNotifications() {
         NSWorkspace.shared.notificationCenter.removeObserver(self)
     }
-
-
 }
-

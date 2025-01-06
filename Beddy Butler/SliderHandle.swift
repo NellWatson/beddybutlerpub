@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class SliderHandle: NSObject {
+@MainActor
+class SliderHandle {
 
     //MARK: Types
     typealias SliderValue = (_ value: CGFloat) -> CGFloat
@@ -29,9 +30,9 @@ class SliderHandle: NSObject {
         didSet {
             if self.name == SliderKeys.StartHandler.rawValue {
                 //TODO: Move variables
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKeys.startSliderChanged.rawValue), object: self._curRatio)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.startSliderChanged.rawValue), object: self._curRatio)
             } else {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKeys.endSliderChanged.rawValue), object: self._curRatio)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.endSliderChanged.rawValue), object: self._curRatio)
             }
         }
     }
@@ -56,35 +57,10 @@ class SliderHandle: NSObject {
         self.handleImage = image
         self.sliderValue = sliderValue
         self.sliderValueChanged = sliderValueChanged
-        self.handleView = NSView()
         //let offset: CGFloat = name == SliderKeys.StartHandler.rawValue ? 0.01 : -0.01
         self._curRatio = ratio
-
+        self.handleView = NSView()
     }
-
-
-    //    func ratioForDoubleValue(value: Double) -> CGFloat {
-    //
-    //        let offset: CGFloat = 0.02
-    //        let isStartSlider = name == SliderKeys.StartHandler.rawValue
-    //
-    //        //First calculate plain value
-    //        let theValue = CGFloat ( value / sliderRange)
-    //
-    //        if isStartSlider {
-    //            let theNewValue = theValue  + offset
-    //            if theNewValue <= offset || theNewValue >= (1 - offset) { return theValue } else {
-    //                return theNewValue
-    //            }
-    //
-    //        } else {
-    //            let theNewValue = theValue  - offset
-    //            if theNewValue <= offset || theNewValue >= (1 - offset) { return theValue } else {
-    //                return theNewValue
-    //            }
-    //        }
-    //
-    //    }
 
     func ratioForValue(value: CGFloat) -> CGFloat {
         var ratio = value
@@ -93,6 +69,4 @@ class SliderHandle: NSObject {
         }
         return ratio
     }
-
-
 }

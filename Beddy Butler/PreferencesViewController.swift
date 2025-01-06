@@ -58,8 +58,8 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         let value = { (valueIn: CGFloat) -> CGFloat in return valueIn }
         let invertedValue = { (valueIn: CGFloat) -> CGFloat in return valueIn }
 
-        let startSlider = NSImage(named: NSImage.Name(rawValue: SliderKeys.StartSlider.rawValue))
-        let bedSlider = NSImage(named: NSImage.Name(rawValue: SliderKeys.BedSlider.rawValue))
+        let startSlider = NSImage(named: NSImage.Name(SliderKeys.StartSlider.rawValue))
+        let bedSlider = NSImage(named: NSImage.Name(SliderKeys.BedSlider.rawValue))
 
         var userStartTime: Double? {
             return UserDefaults.standard.object(forKey: UserDefaultKeys.startTimeValue.rawValue) as? Double
@@ -118,7 +118,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     }
 
     @IBAction func changedPreference(sender: AnyObject) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
     }
 
     @IBAction func changeRunStartup(sender: AnyObject) {
@@ -152,7 +152,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
             break
         }
         if !imageName.isEmpty {
-            let nsImageName = NSImage.Name(rawValue: imageName)
+            let nsImageName = NSImage.Name(imageName)
             self.iconImageView.image = NSImage(named: nsImageName)
         }
     }

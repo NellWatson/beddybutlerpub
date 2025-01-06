@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class ButlerTimer: NSObject {
+class ButlerTimer {
 
     //MARK: Properties
 
@@ -17,7 +17,7 @@ class ButlerTimer: NSObject {
     var timer: Timer?
     /// the audio player that will be used in the play sound action
     var audioPlayer: AudioPlayer
-    let butlerImage = NSImage(named: NSImage.Name(rawValue: "Butler"))
+    let butlerImage = NSImage(named: NSImage.Name("Butler"))
 
     //MARK: Computed properties
 
@@ -29,7 +29,7 @@ class ButlerTimer: NSObject {
         set {
             UserDefaults.standard.set(newValue!, forKey: UserDefaultKeys.startTimeValue.rawValue)
             UserDefaults.standard.synchronize()
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
         }
     }
 
@@ -40,7 +40,7 @@ class ButlerTimer: NSObject {
         set {
             UserDefaults.standard.set(newValue!, forKey: UserDefaultKeys.bedTimeValue.rawValue)
             UserDefaults.standard.synchronize()
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
         }
     }
 
@@ -101,20 +101,19 @@ class ButlerTimer: NSObject {
 
     //MARK: Initialisers and deinitialisers
 
-    override init() {
+    init() {
         self.audioPlayer = AudioPlayer()
-        super.init()
 
         // Not to be called directly...
         calculateNewTimer()
 
         // Register observers to recalculate the timer
-        NotificationCenter.default.addObserver(self, selector: Selector(("calculateNewTimer")), name: NSNotification.Name(NotificationKeys.userPreferenceChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: Selector(("calculateNewTimer")), name: Notification.Name(NotificationKeys.userPreferenceChanged.rawValue), object: nil)
 
         NotificationCenter.default.addObserver(self, selector: Selector(("validateUserTimeValue")), name: UserDefaults.didChangeNotification , object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: Selector(("updateUserTimeValue:")), name: NSNotification.Name(NotificationKeys.startSliderChanged.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: Selector(("updateUserTimeValue:")), name: NSNotification.Name(NotificationKeys.endSliderChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: Selector(("updateUserTimeValue:")), name: Notification.Name(NotificationKeys.startSliderChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: Selector(("updateUserTimeValue:")), name: Notification.Name(NotificationKeys.endSliderChanged.rawValue), object: nil)
 
     }
 
@@ -182,7 +181,7 @@ class ButlerTimer: NSObject {
     func setNewTimer(timeInterval: TimeInterval) {
         // Shcedule timer with the initial value
         self.timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: Selector(("playSound")), userInfo: nil, repeats: false)
-        RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.common)
         //TODO: Remove log entry
         NSLog("Timer created for interval: \(timeInterval)")
     }
@@ -217,11 +216,11 @@ class ButlerTimer: NSObject {
     func updateUserTimeValue(notification: NSNotification) {
         if let newValue = notification.object as? Double {
             switch notification.name {
-            case NSNotification.Name(rawValue: NotificationKeys.startSliderChanged.rawValue):
+            case Notification.Name(rawValue: NotificationKeys.startSliderChanged.rawValue):
                 //let convertedValue = newValue < 0.5 ? newValue * 86400 : (newValue + 0.080) * 86400
                 let convertedValue = newValue * 86400 / 0.92
                 self.userStartTime = convertedValue
-            case NSNotification.Name(rawValue: NotificationKeys.endSliderChanged.rawValue):
+            case Notification.Name(rawValue: NotificationKeys.endSliderChanged.rawValue):
                 //let convertedValue = newValue > 0.5 ? newValue * 86400 : (newValue - 0.080) * 86400
                 let convertedValue = (newValue - 0.080) * 86400 / 0.92
                 self.userBedTime = convertedValue

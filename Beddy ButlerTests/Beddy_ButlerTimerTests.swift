@@ -147,7 +147,7 @@ class Beddy_ButlerTimerTests: XCTestCase {
         let calendar = Calendar.current
         _ = calendar.startOfDay(for: Date())
 
-        var currentDate = Date()
+        let currentDate = Date()
 
         theButlerTimer.calculateNewTimer()
 

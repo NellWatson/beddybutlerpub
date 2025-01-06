@@ -151,9 +151,6 @@ class DoubleSliderHandler: NSView {
             if view.tag == dynamicViewTag {
                 if NSPointInRect(mouseDownPoint, view.frame) {
                     self.activeHandleView = view
-
-
-
                     for key in self.handles {
 
                         let value = key.1
