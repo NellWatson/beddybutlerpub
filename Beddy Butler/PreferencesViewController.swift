@@ -3,7 +3,7 @@
 //  Beddy Butler
 //
 //  Created by David Garces on 10/08/2015.
-//  Copyright (c) 2015 Nell Watson Inc. All rights reserved.
+//  Copyright (c) 2015-2025 Nell Watson Inc. All rights reserved.
 //
 
 import Cocoa
@@ -117,6 +117,8 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         loadSelectedImage(currentValue: sender.selectedCell()!.title)
     }
 
+
+    // TODO: ?
     @IBAction func changedPreference(sender: AnyObject) {
         NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
     }
@@ -127,13 +129,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
 
             let runStartup = theButton.integerValue > 0
             let loginItems = LoginItems()
-            // Turn on launch at login
-            if runStartup {
-                loginItems.createLoginItem()
-            } else {
-                loginItems.deleteLoginItem()
-            }
-
+            loginItems.enableLoginItem(enabled: runStartup)
         }
     }
 

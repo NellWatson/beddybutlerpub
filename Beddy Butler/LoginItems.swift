@@ -8,9 +8,9 @@
 
 import Foundation
 import Cocoa
+import ServiceManagement
 
 class LoginItems {
-
     //MARK: Variables
     let fileManager = FileManager()
     let bundleIdentifier = Bundle.main.bundleIdentifier
@@ -42,35 +42,23 @@ class LoginItems {
 
     //MARK: Public login handling methods
 
-    func deleteLoginItem(){
-// TODO: replace code
-        /*
-        let sharedFileListLoginItems = kLSSharedFileListSessionLoginItems
-        let bundlePath = Bundle.main.bundleURL
-
-        if let loginReference = LSSharedFileListCreate(kCFAllocatorDefault, sharedFileListLoginItems.takeUnretainedValue(), nil) {
-            let loginListValue = loginReference.takeUnretainedValue()
-            let beforeFirstLoginItem = kLSSharedFileListItemBeforeFirst.takeUnretainedValue()
-            if let loginItem = LSSharedFileListInsertItemURL(loginListValue, beforeFirstLoginItem, "Beddy Butler" as CFString, nil, bundlePath as CFURL, nil, nil) {
-         //       LSSharedFileListItemRemove(loginListValue, loginItem.takeUnretainedValue())
+    func enableLoginItem(enabled: Bool){
+        guard let bundleIdentifier = bundleIdentifier else { return }
+        if #available(macOS 13.0, *) {
+            print("enableLoginItem", bundleIdentifier, SMAppService.mainApp.status)
+            do {
+                if enabled {
+                    try SMAppService.mainApp.register()
+                } else {
+                    try SMAppService.mainApp.unregister()
+                }
+            } catch {
+                print("Failed to update login item status: \(error.localizedDescription)")
             }
+        } else {
+            // Fallback on earlier versions
+            SMLoginItemSetEnabled(bundleIdentifier as CFString, enabled)
         }
-         */
-    }
-
-    func createLoginItem() {
-        // TODO: replace code
-        /*/
-        let sharedFileListLoginItems = kLSSharedFileListSessionLoginItems
-        let bundlePath = Bundle.main.bundleURL
-
-        if let loginReference = LSSharedFileListCreate(kCFAllocatorDefault, sharedFileListLoginItems.takeUnretainedValue(), nil) {
-            let loginListValue = loginReference.takeUnretainedValue()
-            let beforeFirstLoginItem = kLSSharedFileListItemBeforeFirst.takeUnretainedValue()
-            LSSharedFileListInsertItemURL(loginListValue, beforeFirstLoginItem, "Beddy Butler" as CFString, nil, bundlePath as CFURL, nil, nil)
-
-        }
-*/
     }
 
     //MARK: Alternative login methods

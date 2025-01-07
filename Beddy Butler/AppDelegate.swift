@@ -3,7 +3,7 @@
 //  Beddy Butler
 //
 //  Created by David Garces on 10/08/2015.
-//  Copyright (c) 2015 Nell Watson Inc. All rights reserved.
+//  Copyright (c) 2015-2025 Nell Watson Inc. All rights reserved.
 //
 
 import Cocoa
@@ -18,33 +18,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBar: NSStatusBar!
     var statusBarItem: NSStatusItem!
 
-    //@IBOutlet weak var menu: NSMenu!
+    @IBOutlet weak var menu: NSMenu!
 
     func setStatusItem() {
-        // -1 to indicate "variable length"
         statusBar = NSStatusBar()
-        statusBarItem = statusBar.statusItem(withLength: 20)
+        statusBarItem = statusBar.statusItem(withLength: 22)
 
-        // Set the text that appears in the menu bar
-        //AppDelegate.statusItem!.title = "Beddy Butler"
-        statusBarItem.button?.image = NSImage(named: NSImage.Name("AppIcon"))
+        statusBarItem.button?.image = NSImage(named: NSImage.Name("AppIcon_monochrome"))
         statusBarItem.button?.image?.size = NSSize(width: 18, height: 18)
-        // image should be set as tempate so that it changes when the user sets the menu bar to a dark theme
-        // TODO: feature disabled for now, this may possibly be the issue to why it is not showing in Nell's mac
-        //AppDelegate.statusItem?.image?.setTemplate(true)
 
-        // Set the menu that should appear when the item is clicked
-        //statusBarItem?.menu = self.menu
+        // Set the menu that should appear when the item is clicked + color should changed automatically
+        statusBarItem?.menu = self.menu
 
-        // Set if the item should ”
-        //change color when clicked
-        //statusBarItem?.highlightMode = true
+        // TODO: add highlight
+        statusBarItem.button?.target = self
+        statusBarItem.button?.action = #selector(statusBarButtonClicked)
+    }
+
+    @objc func statusBarButtonClicked() {
+        print("statusBarButtonClicked")
+        if let button = statusBarItem.button {
+            // Highlight the image when the menu is about to be opened
+            button.highlight(true)
+
+            // Display the menu manually
+            statusBarItem.menu?.popUp(positioning: nil, at: NSPoint(x: 0, y: button.frame.height), in: button)
+
+            // Reset the highlight after the menu closes
+            button.highlight(false)
+        }
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSLog("Calling function", #function)
 
-        // TODO: reset this
         setStatusItem()
 
         registerUserDefaultValues()
@@ -154,8 +161,8 @@ extension AppDelegate {
         // notification center. You will not receive sleep/wake notifications if you file
         //with the default notification center.
 
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: Selector(("receiveSleepNotification:")), name: NSWorkspace.willSleepNotification, object: nil)
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: Selector(("receiveWakeNotification:")), name: NSWorkspace.didWakeNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.receiveSleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.receiveWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
     }
 
     private func unregisterFromNotifications() {

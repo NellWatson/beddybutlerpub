@@ -3,7 +3,7 @@
 //  Beddy Butler
 //
 //  Created by David Garces on 19/08/2015.
-//  Copyright (c) 2015 Nell Watson Inc. All rights reserved.
+//  Copyright (c) 2015-2025 Nell Watson Inc. All rights reserved.
 //
 
 import Foundation
@@ -108,12 +108,12 @@ class ButlerTimer {
         calculateNewTimer()
 
         // Register observers to recalculate the timer
-        NotificationCenter.default.addObserver(self, selector: Selector(("calculateNewTimer")), name: Notification.Name(NotificationKeys.userPreferenceChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.calculateNewTimer), name: Notification.Name(NotificationKeys.userPreferenceChanged.rawValue), object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: Selector(("validateUserTimeValue")), name: UserDefaults.didChangeNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.validateUserTimeValue), name: UserDefaults.didChangeNotification , object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: Selector(("updateUserTimeValue:")), name: Notification.Name(NotificationKeys.startSliderChanged.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: Selector(("updateUserTimeValue:")), name: Notification.Name(NotificationKeys.endSliderChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUserTimeValue), name: Notification.Name(NotificationKeys.startSliderChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUserTimeValue), name: Notification.Name(NotificationKeys.endSliderChanged.rawValue), object: nil)
 
     }
 
@@ -125,7 +125,7 @@ class ButlerTimer {
     // MARK: Timer methods
 
     /// Play sound should invalidate the current timer and schedule the next timer
-    func playSound() {
+    @objc func playSound() {
         //let previousImage = AppDelegate.statusItem?.image
         var result: String
 
@@ -147,7 +147,7 @@ class ButlerTimer {
         //AppDelegate.statusItem?.image = previousImage
     }
 
-    func calculateNewTimer() {
+    @objc func calculateNewTimer() {
         //Invalidate curent timer
         if let theTimer = timer {
             theTimer.invalidate()
@@ -180,7 +180,7 @@ class ButlerTimer {
     /// Invalidates the current timer and sets a new timer using the specified interval
     func setNewTimer(timeInterval: TimeInterval) {
         // Shcedule timer with the initial value
-        self.timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: Selector(("playSound")), userInfo: nil, repeats: false)
+        self.timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(self.playSound), userInfo: nil, repeats: false)
         RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.common)
         //TODO: Remove log entry
         NSLog("Timer created for interval: \(timeInterval)")
@@ -213,7 +213,7 @@ class ButlerTimer {
     }
 
     //MARK: Ratio handling
-    func updateUserTimeValue(notification: NSNotification) {
+    @objc func updateUserTimeValue(notification: NSNotification) {
         if let newValue = notification.object as? Double {
             switch notification.name {
             case Notification.Name(rawValue: NotificationKeys.startSliderChanged.rawValue):

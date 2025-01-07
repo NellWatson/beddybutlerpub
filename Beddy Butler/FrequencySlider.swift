@@ -2,7 +2,7 @@
 //  FrequencySlider.swift
 //  Beddy Butler
 //
-//  Copyright (c) 2015 Nell Watson Inc. All rights reserved.
+//  Copyright (c) 2015-2025 Nell Watson Inc. All rights reserved.
 //
 //
 

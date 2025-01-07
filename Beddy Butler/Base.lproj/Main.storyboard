@@ -12,38 +12,31 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Beddy Butler" id="6r8-jR-IQU">
+                            <menuItem title="Not Now Old Chap" toolTip="Enable quiet mode for the rest of the night" id="uZv-iI-bVS" userLabel="Mute">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Beddy Butler" systemMenu="apple" id="lfj-tC-u7F">
-                                    <items>
-                                        <menuItem title="Not Now Old Chap" toolTip="Enable quiet mode for the rest of the night" id="uZv-iI-bVS" userLabel="Mute">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <binding destination="lQB-tK-Eio" name="value" keyPath="values.isMuted" id="K2P-hP-89g"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="DcW-2q-hc9"/>
-                                        <menuItem title="About Beddy Butler" id="LsZ-vP-hFP">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="C1n-eF-rec"/>
-                                                <segue destination="vVG-17-Gue" kind="modal" id="wrJ-vh-np4"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="fdg-7d-XMJ"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="5JI-LV-irr">
-                                            <connections>
-                                                <segue destination="XfG-lQ-9wD" kind="modal" id="OUG-1s-vbT"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="stD-ui-4Ai"/>
-                                        <menuItem title="Quit Beddy Butler" keyEquivalent="q" id="hkF-8S-LEb">
-                                            <connections>
-                                                <action selector="quit:" target="Voe-Tx-rLC" id="0e8-5c-PLb"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
+                                <connections>
+                                    <binding destination="lQB-tK-Eio" name="value" keyPath="values.isMuted" id="K2P-hP-89g"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="DcW-2q-hc9"/>
+                            <menuItem title="About Beddy Butler" id="LsZ-vP-hFP">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="C1n-eF-rec"/>
+                                    <segue destination="vVG-17-Gue" kind="modal" id="wrJ-vh-np4"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="fdg-7d-XMJ"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="5JI-LV-irr">
+                                <connections>
+                                    <segue destination="XfG-lQ-9wD" kind="modal" id="OUG-1s-vbT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="stD-ui-4Ai"/>
+                            <menuItem title="Quit Beddy Butler" keyEquivalent="q" id="hkF-8S-LEb">
+                                <connections>
+                                    <action selector="quitWithSender:" target="Voe-Tx-rLC" id="ZEg-0W-Tjl"/>
+                                </connections>
                             </menuItem>
                         </items>
                     </menu>
@@ -53,7 +46,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Beddy_Butler" customModuleProvider="target">
                     <connections>
-                        <outlet property="menu" destination="lfj-tC-u7F" id="Ac5-IG-Cle"/>
+                        <outlet property="menu" destination="AYu-sK-qS6" id="vBa-Nw-rod"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -72,7 +65,7 @@
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="230-hj-ROE">
                                 <rect key="frame" x="20" y="25" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSApplicationIcon" id="22b-bO-gJM"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="22b-bO-gJM"/>
                             </imageView>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQz-PZ-Xg6">
                                 <rect key="frame" x="174" y="129" width="160" height="24"/>
@@ -95,7 +88,7 @@
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-JY-gCE">
                                 <rect key="frame" x="174" y="70" width="262" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copyright (c) 2015, Nell Watson Inc." id="fbE-MI-sFy">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copyright (c) 2015-2025, Nell Watson Inc." id="fbE-MI-sFy">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -145,7 +138,7 @@
                                     <rect key="frame" x="1" y="1" width="551" height="308"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" verticallyResizable="YES" baseWritingDirection="leftToRight" selectionGranularity="word" findStyle="panel" quoteSubstitution="YES" dashSubstitution="YES" id="2fU-H6-Xsl">
+                                        <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" verticallyResizable="YES" baseWritingDirection="leftToRight" findStyle="panel" quoteSubstitution="YES" dashSubstitution="YES" id="2fU-H6-Xsl">
                                             <rect key="frame" x="0.0" y="0.0" width="551" height="475"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,7 +147,7 @@
                                             <size key="maxSize" width="553" height="800"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
-                                                    <mutableString key="content">Beddy Butler Copyright (c) 2015, Nell Watson Inc.
+                                                    <mutableString key="content">Beddy Butler Copyright (c) 2015-2025, Nell Watson Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -255,7 +248,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="changeRunStartup:" target="XfG-lQ-9wD" id="Trn-6v-XjF"/>
+                                    <action selector="changeRunStartupWithSender:" target="XfG-lQ-9wD" id="EgR-U0-2jg"/>
                                     <binding destination="45n-s1-uBZ" name="value" keyPath="values.runStartup" id="g68-sb-Aiz"/>
                                 </connections>
                             </button>
@@ -328,7 +321,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     </column>
                                 </cells>
                                 <connections>
-                                    <action selector="changedRadioSelection:" target="XfG-lQ-9wD" id="MfS-V0-uM1"/>
+                                    <action selector="changedRadioSelectionWithSender:" target="XfG-lQ-9wD" id="1Co-FG-LYR"/>
                                     <binding destination="45n-s1-uBZ" name="selectedValue" keyPath="values.selectedSound" id="PLJ-L2-QBC"/>
                                 </connections>
                             </matrix>
@@ -362,7 +355,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="previewAudio:" target="XfG-lQ-9wD" id="Yek-dO-Qxq"/>
+                                    <action selector="previewAudioWithSender:" target="XfG-lQ-9wD" id="ycH-1H-sWW"/>
                                 </connections>
                             </button>
                             <button identifier="Preview Insistent" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-iV-TbX" userLabel="Insistent Button">
@@ -373,7 +366,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="previewAudio:" target="XfG-lQ-9wD" id="Ssh-OG-2Of"/>
+                                    <action selector="previewAudioWithSender:" target="XfG-lQ-9wD" id="ZGE-fy-uPp"/>
                                 </connections>
                             </button>
                             <button identifier="Preview Zombie" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-k8-qo9" userLabel="Zombie Button">
@@ -384,7 +377,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="previewAudio:" target="XfG-lQ-9wD" id="UPH-N8-uro"/>
+                                    <action selector="previewAudioWithSender:" target="XfG-lQ-9wD" id="WCU-xR-594"/>
                                 </connections>
                             </button>
                             <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-pG-pTk" customClass="FrequencySlider" customModule="Beddy_Butler" customModuleProvider="target">
