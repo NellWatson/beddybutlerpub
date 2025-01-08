@@ -12,31 +12,38 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Not Now Old Chap" toolTip="Enable quiet mode for the rest of the night" id="uZv-iI-bVS" userLabel="Mute">
+                            <menuItem title="Beddy Butler" id="6r8-jR-IQU">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <binding destination="lQB-tK-Eio" name="value" keyPath="values.isMuted" id="K2P-hP-89g"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="DcW-2q-hc9"/>
-                            <menuItem title="About Beddy Butler" id="LsZ-vP-hFP">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="C1n-eF-rec"/>
-                                    <segue destination="vVG-17-Gue" kind="modal" id="wrJ-vh-np4"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="fdg-7d-XMJ"/>
-                            <menuItem title="Preferences…" keyEquivalent="," id="5JI-LV-irr">
-                                <connections>
-                                    <segue destination="XfG-lQ-9wD" kind="modal" id="OUG-1s-vbT"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="stD-ui-4Ai"/>
-                            <menuItem title="Quit Beddy Butler" keyEquivalent="q" id="hkF-8S-LEb">
-                                <connections>
-                                    <action selector="quitWithSender:" target="Voe-Tx-rLC" id="ZEg-0W-Tjl"/>
-                                </connections>
+                                <menu key="submenu" title="Beddy Butler" systemMenu="apple" id="lfj-tC-u7F">
+                                    <items>
+                                        <menuItem title="Not Now Old Chap" toolTip="Enable quiet mode for the rest of the night" id="uZv-iI-bVS" userLabel="Mute">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="lQB-tK-Eio" name="value" keyPath="values.isMuted" id="K2P-hP-89g"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="DcW-2q-hc9"/>
+                                        <menuItem title="About Beddy Butler" id="LsZ-vP-hFP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="C1n-eF-rec"/>
+                                                <segue destination="vVG-17-Gue" kind="modal" id="wrJ-vh-np4"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="fdg-7d-XMJ"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="5JI-LV-irr">
+                                            <connections>
+                                                <segue destination="XfG-lQ-9wD" kind="modal" id="OUG-1s-vbT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="stD-ui-4Ai"/>
+                                        <menuItem title="Quit Beddy Butler" keyEquivalent="q" id="hkF-8S-LEb">
+                                            <connections>
+                                                <action selector="quitWithSender:" target="Voe-Tx-rLC" id="Hce-3p-okb"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
                             </menuItem>
                         </items>
                     </menu>
@@ -46,7 +53,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Beddy_Butler" customModuleProvider="target">
                     <connections>
-                        <outlet property="menu" destination="AYu-sK-qS6" id="vBa-Nw-rod"/>
+                        <outlet property="menu" destination="lfj-tC-u7F" id="9ip-JL-KVj"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
