@@ -2,7 +2,7 @@
 //  FrequencySlider.swift
 //  Beddy Butler
 //
-//  Copyright (c) 2015 Nell Watson Inc. All rights reserved.
+//  Copyright (c) 2015-2025 Nell Watson Inc. All rights reserved.
 //
 //
 
@@ -10,16 +10,15 @@ import Cocoa
 
 class FrequencySlider: NSSlider {
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
     }
     
-    override func mouseDown(theEvent: NSEvent) {
-        super.mouseDown(theEvent)
+    override func mouseDown(with theEvent: NSEvent) {
+        super.mouseDown(with: theEvent)
         // Notify the timer to recalculate
-        NSNotificationCenter.defaultCenter().postNotificationName(NotificationKeys.userPreferenceChanged.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKeys.userPreferenceChanged.rawValue), object: self)
     }
-    
 }

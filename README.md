@@ -32,7 +32,7 @@ The app can auto-open on startup/login if the user activates this option.
 
 ## Requirements
 
-This app was developed using the latest version of Swift 2.1 and Xcode 7.1. You may need to update your IDE to the latest version before you are able to open the solution. To run Beddy Butler you will need OS X 10.10 or later.
+This app was developed using the latest version of Swift 6.0 and Xcode 16.0. You may need to update your IDE to the latest version before you are able to open the solution. To run Beddy Butler you will need OS X 11.5 or later.
 
 ## Programmatically.
 
